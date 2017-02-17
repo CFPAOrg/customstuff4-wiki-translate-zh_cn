@@ -1,5 +1,5 @@
-[[Home]]
+__[[Home]]__
 
-[[Getting Started]]
+__[[Getting Started]]__
 
-[[Adding Content]]
+__[[Adding Content]]__
