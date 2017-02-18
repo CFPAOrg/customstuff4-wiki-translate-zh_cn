@@ -5,3 +5,7 @@ __[[Getting Started]]__
 __[[Adding Content]]__
 
 __[[Json Formats]]__
+
+__[[Crafting Recipes]]__
+
+__[[Smelting Recipes and Fuel]]__
