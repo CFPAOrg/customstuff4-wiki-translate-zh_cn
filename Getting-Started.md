@@ -1,11 +1,11 @@
 To get started, you need to create a new folder in the mods directory of you minecraft installation. In that folder create a file called _cs4mod.json_ with the following content:
-
-	{  
-	  "id": "mymod",
-	  "name": "My Mod",
-	  "version": "1.0.0"
-	}
-
+```json
+{  
+	"id": "mymod",
+	"name": "My Mod",
+	"version": "1.0.0"
+}
+```
 Replace _mymod_ with the id for your mod. The id must only contain lowercase letters (a-z), numbers (0-9) and underscores.  
 Replace _My Mod_ with the name for your mod.  
 Replace _1.0.0_ with the version of your mod.
