@@ -15,3 +15,5 @@ __[[Ore Dictionary]]__
 __[[Tool Tips]]__
 
 __[[GUI Modifiers]]__
+
+__[[Items]]__
