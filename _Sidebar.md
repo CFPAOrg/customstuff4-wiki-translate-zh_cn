@@ -11,3 +11,7 @@ __[[Crafting Recipes]]__
 __[[Smelting Recipes and Fuel]]__
 
 __[[Ore Dictionary]]__
+
+__[[Tool Tips]]__
+
+__[[GUI Modifiers]]__
