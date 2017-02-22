@@ -9,7 +9,7 @@ Some attributes are used by all types of items:
 }
 ```
 
-* __id__: This is the unique id of the item. This is used to reference the item in recipes or in the lang file. This has to be all lowercase and must not contain spaces. It only has to be unique in your mod and only for items. So you can also have a block with the same id. If your mod id is _mymod_ and the item id is _myitem_, you reference the item with _mymod:myitem_.
+* __id__: This is the unique id of the item. This is used to reference the item in recipes or in the lang file. This has to be all lowercase and must not contain spaces. It only has to be unique in your mod. If your mod id is _mymod_ and the item id is _myitem_, you reference the item with _mymod:myitem_.
 
 * __model__: This defines the model file that is being used. In the example above the file is located in _assets/mymod/models/item/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes.
 
