@@ -17,3 +17,7 @@ __[[Tool Tips]]__
 __[[GUI Modifiers]]__
 
 __[[Items]]__
+
+__[[Blocks]]__
+
+__[[World Generation]]__
