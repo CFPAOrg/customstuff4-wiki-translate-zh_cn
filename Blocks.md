@@ -54,6 +54,23 @@ You can still define the attribute like this:
 
 This will set the value for all subtypes.
 
+#Lang File
+The lang files are located in _assets/themodid/lang_.
+
+The lang file entry for a block without subtypes looks like this:
+
+```
+tile.themodid.theblockid.name=The Localized Name
+```
+
+And for a block with subtypes:
+
+```
+tile.themodid.theblockid.0.name=Subtype 0
+tile.themodid.theblockid.1.name=Subtype 1
+tile.themodid.theblockid.5.name=Subtype 5
+```
+
 #Materials
 The following materials can be used:
 
