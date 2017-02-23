@@ -2,14 +2,16 @@
 
 Type name: __smeltingRecipe__
 
-	{
-		"input": "minecraft:stone",
-		"result": {
-			"item" : "minecraft:obsidian",
-			"amount" : 3
-		}
-		"xp": 2.7
-	}
+```json
+{
+  "input": "minecraft:stone",
+  "result": {
+    "item": "minecraft:obsidian",
+    "amount": 3
+  },
+  "xp": 2.7
+}
+```
 	
 * __input__: This is an ItemStack and defines the input of the recipe. You may use "all" for metadata. Specifying _nbt_ here has no effect.
 
@@ -21,10 +23,12 @@ Type name: __smeltingRecipe__
 
 Type name: __fuel__
 
-	{
-		"item" : "minecraft:stone",
-		"burnTime" : 800
-	}
+```json
+{
+  "item" : "minecraft:stone",
+  "burnTime" : 800
+}
+```
 	
 * __item__: This is an ItemStack and defines the item that is being added as fuel for the furnace. You may use "all" for metadata and specify _nbt_.
 
