@@ -54,6 +54,35 @@ You can still define the attribute like this:
 
 This will set the value for all subtypes.
 
+#Materials
+The following materials can be used:
+
+* air
+* cactus
+* circuits
+* clay
+* cloth
+* craftedSnow
+* fire
+* glass
+* grass
+* ground
+* ice
+* iron
+* lava
+* leaves
+* plants
+* pumpkin
+* redstoneLight
+* rock
+* sand
+* snow
+* sponge
+* tnt
+* vine
+* water
+* wood
+
 #Block States
 The blockstate file defines what model the block uses depending on its state. For example the metadata subtype is a state. A simple blockstate file for a block using subtypes might look like this:
 
