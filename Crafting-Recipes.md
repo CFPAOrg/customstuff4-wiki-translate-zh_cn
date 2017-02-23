@@ -2,18 +2,20 @@
 
 Type name: __shapedRecipe__
 
-	{
-		"shape": [ "SS", "DX" ],
-		"items" : {
-			"S": "minecraft:stone@all",
-			"D": "minecraft:diamond_block"
-		},
-		"result" : {
-			"item": "minecraft:obsidian",
-			"amount": 3
-		},
-		"mirrored" : false
-	}
+```json
+{
+  "shape": ["SS", "DX"],
+  "items": {
+    "S": "minecraft:stone@all",
+    "D": "minecraft:diamond_block"
+  },
+  "result": {
+    "item": "minecraft:obsidian",
+    "amount": 3
+  },
+  "mirrored": false
+}
+```
 	
 * __shape__: This is a list of strings. Each string is row in the recipe and each letter in the string one item. Every string has to have the same length and must be between 1 and 3 letters long. There must not be more than 3 strings.
 
@@ -27,16 +29,18 @@ Type name: __shapedRecipe__
 
 Type name: __shapelessRecipe__
 
-	{
-		"items" : [
-			"minecraft:stone@all",
-			"oreclass:stickWood"
-		],
-		"result" : {
-			"item": "minecraft:obsidian",
-			"amount": 3
-		},
-	}
+```json
+{
+  "items": [
+    "minecraft:stone@all",
+    "oreclass:stickWood"
+  ],
+  "result": {
+    "item": "minecraft:obsidian",
+    "amount": 3
+  }
+}
+```
 	
 * __items__: This is a list of RecipeInput and defines the items that are required for the recipe. You may use "all" for metadata. Specifying _nbt_ here has no effect.
 
