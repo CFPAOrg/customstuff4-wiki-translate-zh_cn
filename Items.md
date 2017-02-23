@@ -48,6 +48,22 @@ You can still define the attribute like this:
 
 This will set the value for all subtypes.
 
+#Lang File
+The lang files are located in _assets/themodid/lang_.
+
+The lang file entry for an item without subtypes looks like this:
+
+```
+item.themodid.theitemid.name=The Localized Name
+```
+
+And for an item with subtypes:
+
+```
+item.themodid.theitemid.0.name=Subtype 0
+item.themodid.theitemid.1.name=Subtype 1
+item.themodid.theitemid.5.name=Subtype 5
+```
 #Simple
 Type name: __item:simple__
 
