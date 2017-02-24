@@ -5,7 +5,8 @@ Some attributes are used by all types of items:
 {
 	"id" : "myitem",
 	"model" : "mymod:myitemmodel",
-	"creativeTab" : "tools"
+	"creativeTab" : "tools",
+	"information" : ["First line", "Second line"]
 }
 ```
 
@@ -14,6 +15,8 @@ Some attributes are used by all types of items:
 * __model__: This defines the model file that is being used. In the example above the file is located in _assets/mymod/models/item/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes.
 
 * __creativeTab__: This defines the creative tab that the item appears in. Omit to make it not appear in any tab. Supports metadata subtypes.
+
+* __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
 
 #Metadata Subtypes
 Some item types support metadata subtypes. That means the item can have different models, names or other things depending on their metadata value. For example dye is an example for this: each color is a metadata subtype of the same item.
@@ -67,10 +70,18 @@ item.themodid.theitemid.5.name=Subtype 5
 #Simple
 Type name: __item:simple__
 
-This item has no special functionality, like sticks or coal. It supports metadata subtypes. There are no additional attributes for this item.
+This item has no special functionality, like sticks or coal. It supports metadata subtypes.
 
-#Axe, Pickaxe, Shovel
-Type name: __item:axe__, __item:pickaxe__, __item:shovel__
+```json
+{
+	"maxStack" : "32"
+}
+```
+
+* __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
+
+#Axe, Pickaxe, Shovel, Sword
+Type name: __item:axe__, __item:pickaxe__, __item:shovel__, __item:sword__
 
 These items act like their vanilla equivalents. They do not support metadata subtypes. All of them has the same set of attributes.
 
