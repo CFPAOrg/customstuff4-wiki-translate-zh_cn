@@ -175,6 +175,6 @@ For more information about block states, you might look here: http://minecraft.g
 #Simple
 Type name: __block:simple__
 
-This block has no special functionality, like stone or dirt. It supports metadata subtypes. There are no additional attributes for this block.
+This block has no special functionality, like stone or dirt. It supports all 16 metadata subtypes. There are no additional attributes for this block.
 
 Block state properties: subtype.
