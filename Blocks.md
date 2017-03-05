@@ -178,3 +178,35 @@ Type name: __block:simple__
 This block has no special functionality, like stone or dirt. It supports all 16 metadata subtypes. There are no additional attributes for this block.
 
 Block state properties: subtype.
+
+#Orientable
+There are 3 different orientable blocks: vertical, horizontal and directional. All of them have one additional attribute:
+
+```json
+{
+  "faceBySide" : true
+}
+```
+
+* __faceBySide__: This defines whether the facing of the block should be determined by the clicked side instead of where the player is looking. If the block can't face in the direction of the clicked side, the facing is still determined on the direction the player is looking at. Supports metadata subtypes. The default value is false.
+
+###Vertical
+Type name: __block:orientable:vertical__
+
+This block can face only up and down. It supports metadata subtypes 0 to 7.
+
+Block state properties: facing and subtype. Facing can either be _up_ or _down_.
+
+###Horizontal
+Type name: __block:orientable:horizontal__
+
+This block can face to north, south, east and west. It supports metadata subtypes 0 to 3.
+
+Block state properties: facing and subtype. Facing can be _north_, _south_, _east_ and _west_.
+
+###Directional
+Type name: __block:orientable:directional__
+
+This block can face in all directions. It supports metadata subtypes 0 and 1.
+
+Block state properties: facing and subtype. Facing can be _up_, _down_, _north_, _south_, _east_ and _west_.
