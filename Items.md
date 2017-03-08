@@ -74,7 +74,7 @@ This item has no special functionality, like sticks or coal. It supports metadat
 
 ```json
 {
-	"maxStack" : "32"
+	"maxStack" : 32
 }
 ```
 
@@ -98,3 +98,31 @@ These items act like their vanilla equivalents. They do not support metadata sub
 * __damage__: This defines the damage against entities. If omitted, the materials damage will be used.
 * __attackSpeed__: This defines the attack speed. If omitted, the materials attack speed will be used.
 * __durability__: This defines the number of uses before the tool breaks. If omitted, the materials durability will be used.
+
+#Food
+Type name: __item:food__
+
+As the name suggests, this item type is for food. It supports metadata subtypes.
+
+```json
+{
+	"maxStack" : 32,
+	"healAmount": 4,
+	"saturation" : 1.2,
+	"alwaysEdible": true,
+	"potionEffect" : {
+		"id" : "minecraft:speed",
+		"duration" : 120
+	},
+	"potionEffectProbability" : 0.5,
+	"isWolfFood" : false
+}
+```
+
+* __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
+* __healAmount__: The amount the item heals the player. Supports metadata subtypes. The default value is 2.
+* __saturation__: The amount of saturation that this food provides. The default value is 0.6.
+* __alwaysEdible__: This defines whether the food can be eaten even if the player has a filled food bar. The default value is false.
+* __potionEffect__: This is a PotionEffect that defines what effect is being added to the player. Omit if no effect should be added.
+* __potionEffectProbability__: This defines the probability that the potion effect is being added to the player. 0.5 means a 50% chance, 1.0 means it is being added everytime. The default value is 1.0.
+* __isWolfFood__: This defines whether wolves like this food. The default value is false.
