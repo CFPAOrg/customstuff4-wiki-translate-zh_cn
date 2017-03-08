@@ -106,3 +106,20 @@ The following is the input part of a shapeless recipe, _items_ is a list of Reci
   ]
 }
 ```
+
+#PotionEffect
+A potion effect defines the effect itself and the duration and amplifier.
+
+```json
+{
+	"id": "minecraft:hunger",
+	"duration": 60,
+	"amplifier" : 2,
+	"showParticles": false
+}
+```
+
+* __id__: This is a ResourceLocation defining what effect is being used.
+* __duration__: The duration of the effect in ticks. The default value is 60 (3 seconds).
+* __amplifier__: An amplifier for the effect. This increases the effect. The default value is 1.
+* __showParticles__: Whether to show the effect particles. The default value is true.
