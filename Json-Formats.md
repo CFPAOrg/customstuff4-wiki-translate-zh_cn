@@ -123,3 +123,25 @@ A potion effect defines the effect itself and the duration and amplifier.
 * __duration__: The duration of the effect in ticks. The default value is 60 (3 seconds).
 * __amplifier__: An amplifier for the effect. This increases the effect. The default value is 1.
 * __showParticles__: Whether to show the effect particles. The default value is true.
+
+# BlockState
+A block state defines a block and its properties.
+
+```json
+{
+	"block": "minecraft:log",
+	"properties": {
+		"variant": "spruce",
+		"axis": "z"
+	}
+}
+```
+```json
+{
+	"block": "minecraft:log",
+	"properties": "variant=spruce,axis=z"
+}
+```
+
+* __block__: This is a ResourceLocation defining the block.
+* __properties__: This defines the properties and is optional.
