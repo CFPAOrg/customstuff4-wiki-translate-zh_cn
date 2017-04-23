@@ -1,4 +1,4 @@
-#Smelting Recipes
+# Smelting Recipes
 
 Type name: __smeltingRecipe__
 
@@ -19,7 +19,7 @@ Type name: __smeltingRecipe__
 
 * __xp__: This defines the experience gained from this recipe. This is optional and defaults to 0.
 
-#Fuel
+# Fuel
 
 Type name: __fuel__
 
