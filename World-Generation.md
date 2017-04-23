@@ -1,4 +1,4 @@
-#Ore
+# Ore
 This generator can be used for ore-like generation, like iron ore or clay.
 
 Type name: __worldGen:ore__
