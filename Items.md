@@ -1,4 +1,4 @@
-#All Items
+# All Items
 Some attributes are used by all types of items:
 
 ```json
@@ -18,7 +18,7 @@ Some attributes are used by all types of items:
 
 * __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
 
-#Metadata Subtypes
+# Metadata Subtypes
 Some item types support metadata subtypes. That means the item can have different models, names or other things depending on their metadata value. For example dye is an example for this: each color is a metadata subtype of the same item.
 If an item type supports metadata subtypes, you can enable it by providing the _subtypes_ attribute:
 
@@ -51,7 +51,7 @@ You can still define the attribute like this:
 
 This will set the value for all subtypes.
 
-#Lang File
+# Lang File
 The lang files are located in _assets/themodid/lang_.
 
 The lang file entry for an item without subtypes looks like this:
@@ -67,7 +67,7 @@ item.themodid.theitemid.0.name=Subtype 0
 item.themodid.theitemid.1.name=Subtype 1
 item.themodid.theitemid.5.name=Subtype 5
 ```
-#Simple
+# Simple
 Type name: __item:simple__
 
 This item has no special functionality, like sticks or coal. It supports metadata subtypes.
@@ -80,7 +80,7 @@ This item has no special functionality, like sticks or coal. It supports metadat
 
 * __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
 
-#Axe, Pickaxe, Shovel, Sword
+# Axe, Pickaxe, Shovel, Sword
 Type name: __item:axe__, __item:pickaxe__, __item:shovel__, __item:sword__
 
 These items act like their vanilla equivalents. They do not support metadata subtypes. All of them has the same set of attributes.
@@ -99,7 +99,7 @@ These items act like their vanilla equivalents. They do not support metadata sub
 * __attackSpeed__: This defines the attack speed. If omitted, the materials attack speed will be used.
 * __durability__: This defines the number of uses before the tool breaks. If omitted, the materials durability will be used.
 
-#Food
+# Food
 Type name: __item:food__
 
 As the name suggests, this item type is for food. It supports metadata subtypes.
