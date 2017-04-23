@@ -210,3 +210,33 @@ Type name: __block:orientable:directional__
 This block can face in all directions. It supports metadata subtypes 0 and 1.
 
 Block state properties: facing and subtype. Facing can be _up_, _down_, _north_, _south_, _east_ and _west_.
+
+# Fence
+Type name: __block:fence__
+
+This is a fence block. It supports all 16 metadata subtypes. There are no additional attributes for this block.
+
+Block state properties: subtype.
+
+# Stairs
+Type name: __block:stairs__
+
+This is a stairs block. It does not support metadata subtypes. There are no additional attributes for this block.
+
+Block state properties: facing, half and shape. Facing can be _north_, _south_, _east_ and _west_. Half can be _bottom_ and _top_. Shape can be _straight_, _outer_right_, _outer_left_, _inner_right_ and _inner_left_.
+
+# Slab
+Type name: __block:slab__
+
+This is a half slab lock. It supports metadata subtypes 0 to 7. It has one additional attribute:
+
+```json
+{
+  "doubleSlab" : {
+	  "block": "minecraft:log",
+	  "properties": "variant=spruce"
+  }
+}
+```
+
+* __doubleSlab__: This is a BlockState defining what two half slabs are being combined to. Supports metadata subtypes. If omitted, slabs can't be combined.
