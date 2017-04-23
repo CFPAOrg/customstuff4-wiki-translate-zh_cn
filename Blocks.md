@@ -1,4 +1,4 @@
-#All Blocks
+# All Blocks
 Some attributes are used by all types of blocks:
 
 ```json
@@ -63,7 +63,7 @@ Some attributes are used by all types of blocks:
 
 * __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
 
-#Metadata Subtypes
+# Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
 If a block type supports metadata subtypes, you can enable it by providing the _subtypes_ attribute:
 
@@ -113,7 +113,7 @@ tile.themodid.theblockid.1.name=Subtype 1
 tile.themodid.theblockid.5.name=Subtype 5
 ```
 
-#Materials
+# Materials
 The following materials can be used:
 
 * air
@@ -142,7 +142,7 @@ The following materials can be used:
 * water
 * wood
 
-#Sound Types
+# Sound Types
 The following sound types can be used.
 
 * anvil
@@ -158,7 +158,7 @@ The following sound types can be used.
 * stone
 * wood
 
-#Block States
+# Block States
 The blockstate file defines what model the block uses depending on its state. For example the metadata subtype is a state. A simple blockstate file for a block using subtypes might look like this:
 
 ```json
@@ -172,14 +172,14 @@ The blockstate file defines what model the block uses depending on its state. Fo
 
 For more information about block states, you might look here: http://minecraft.gamepedia.com/Model#Block_states
 
-#Simple
+# Simple
 Type name: __block:simple__
 
 This block has no special functionality, like stone or dirt. It supports all 16 metadata subtypes. There are no additional attributes for this block.
 
 Block state properties: subtype.
 
-#Orientable
+# Orientable
 There are 3 different orientable blocks: vertical, horizontal and directional. All of them have one additional attribute:
 
 ```json
@@ -190,21 +190,21 @@ There are 3 different orientable blocks: vertical, horizontal and directional. A
 
 * __faceBySide__: This defines whether the facing of the block should be determined by the clicked side instead of where the player is looking. If the block can't face in the direction of the clicked side, the facing is still determined on the direction the player is looking at. Supports metadata subtypes. The default value is false.
 
-###Vertical
+### Vertical
 Type name: __block:orientable:vertical__
 
 This block can face only up and down. It supports metadata subtypes 0 to 7.
 
 Block state properties: facing and subtype. Facing can either be _up_ or _down_.
 
-###Horizontal
+### Horizontal
 Type name: __block:orientable:horizontal__
 
 This block can face to north, south, east and west. It supports metadata subtypes 0 to 3.
 
 Block state properties: facing and subtype. Facing can be _north_, _south_, _east_ and _west_.
 
-###Directional
+### Directional
 Type name: __block:orientable:directional__
 
 This block can face in all directions. It supports metadata subtypes 0 and 1.
