@@ -1,4 +1,4 @@
-#Shaped Recipes
+# Shaped Recipes
 
 Type name: __shapedRecipe__
 
@@ -25,7 +25,7 @@ Type name: __shapedRecipe__
 
 * __mirrored__: This is either _true_ or _false_ and specifies whether the accepts the mirrored version of the shape. This is optional and defaults to _true_.
 
-#Shapeless Recipes
+# Shapeless Recipes
 
 Type name: __shapelessRecipe__
 
