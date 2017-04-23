@@ -14,7 +14,7 @@ Type name: __toolTip__
 * __clearExisting__: Specifies whether the existing tool tip should be cleared. You can use this to replace an existing tool tip with your own. This is optional and defaults to _false_.
 * __mode__: This defines when the tool tip is shown. There are 7 modes: all, ctrl, shift, alt, noctrl, noshift and noalt.
 
-#Examples
+## Examples
 
 The following two tool tips cause coal to have a "Press Shift for more" tool tip. Note that the first one has its mode set to _noshift_ and not _all_. Otherwise the "Press SHIFT" line would still show up when pressing SHIFT.
 ```json
