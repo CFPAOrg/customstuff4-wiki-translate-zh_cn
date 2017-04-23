@@ -55,7 +55,7 @@ Type name: __guiModifier__
 * downloadTerrain
 * gameOver
 
-#Examples
+## Examples
 
 The following will add a "Custom Stuff 4" label in the bottom-left corner, remove the "Open To LAN" button and move the "Return to Game" button to its place changing the text to "Close this GUI".
 ```json
