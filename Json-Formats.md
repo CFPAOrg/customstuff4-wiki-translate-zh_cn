@@ -1,6 +1,6 @@
 This is a list of how to specify certain things in json. 
 
-#ResourceLocation
+# ResourceLocation
 A ResourceLocation is used to define the location of textures, models, or for item or block identifiers. There are two ways to define an ResourceLocation.
 
 Short version:
@@ -25,7 +25,7 @@ Long version:
 }
 ```
 
-#NBTTagCompound
+# NBTTagCompound
 A NBTTagCompound is defined as a string containg the nbt data:
 
 ```json
@@ -67,7 +67,7 @@ There is also a short version of defining an item stack. However that way you ca
 	
 This will define an stack with an amount of 1. Omitting the metadata part will default in a metadata of 0.
 
-##Examples
+## Examples
 The following is a smelting recipe. Both _input_ and _result_ are item stacks:
 
 ```json
@@ -81,7 +81,7 @@ The following is a smelting recipe. Both _input_ and _result_ are item stacks:
 }
 ```
 	
-#RecipeInput
+# RecipeInput
 A recipe input is either an ItemStack or a ore class.
 An ore class is defined like this:
 
@@ -91,7 +91,7 @@ An ore class is defined like this:
 	
 An ItemStack is defined as usual.
 
-##Examples
+## Examples
 The following is the input part of a shapeless recipe, _items_ is a list of RecipeInput:
 
 ```json
@@ -107,7 +107,7 @@ The following is the input part of a shapeless recipe, _items_ is a list of Reci
 }
 ```
 
-#PotionEffect
+# PotionEffect
 A potion effect defines the effect itself and the duration and amplifier.
 
 ```json
