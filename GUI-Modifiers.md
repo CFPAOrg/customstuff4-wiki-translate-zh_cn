@@ -10,7 +10,8 @@ Type name: __guiModifier__
 			"offsetX" : 3,
 			"offsetY" : [ "10%", 3 ],
 			"text" : "The text for the label",
-			"dropShadow" : true
+			"dropShadow" : true,
+			"color": "white"
 		}
 	],
 	"removeButtons" : [ 0, 5, 7 ],
@@ -37,6 +38,7 @@ Type name: __guiModifier__
 	* __offsetY__: This defines the horizontal offset from the positioned specified with alignY. This can be an absolute value, a relative value or both. This is optional and defaults to 0.
 	* __text__: This defines the text that is shown.
 	* __dropShadow__: This defines whether the text should be drawn with a drop shadow. This is optional and defaults to true.
+	* __color__: This is a Color defining the color of the text. The default value is "white".
 * __removeButtons__: This is a list of integers, where each integer specifies the id of a button that is being removed from the GUI.
 * __editButtons__: This is a list of buttons that are being modified. 
 	* __buttonId__: This defines the id of the button that is being modified.
