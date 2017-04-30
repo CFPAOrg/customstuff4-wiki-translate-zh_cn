@@ -20,4 +20,8 @@ __[[Items]]__
 
 __[[Blocks]]__
 
+__[[Tile Entities]]__
+
+__[[GUIs]]__
+
 __[[World Generation]]__
