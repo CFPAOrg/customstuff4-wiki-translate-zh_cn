@@ -145,3 +145,14 @@ A block state defines a block and its properties.
 
 * __block__: This is a ResourceLocation defining the block.
 * __properties__: This defines the properties and is optional.
+
+# Color
+There are two ways to define a color: using a hex code and using the name of the color.
+
+```json
+"ff0000"
+
+"red"
+```
+
+The following color names are available: black, white, red, lime, blue, yellow, aqua, magenta, silver, gray, maroon, olive, green, purple, teal, navy
