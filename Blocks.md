@@ -21,7 +21,9 @@ Some attributes are used by all types of blocks:
 	"isBeaconBase" : false,
 	"enchantPowerBonus" : 1.5,
 	"expDrop" : [0, 1],
-	"information" : [ "First line", "Second line"]
+	"information" : [ "First line", "Second line"],
+	"tileEntity": "mymod:mytileentity",
+	"gui": "mymod:mygui"
 }
 ```
 
@@ -62,6 +64,10 @@ Some attributes are used by all types of blocks:
 * __expDrop__: This defines the amount of exp dropped when breaking the block. You can define it like this: `5` or like this: `[1, 5]`. The first one will always drop 5 exp, the second one drops a random amount between 1 and 5. Supports metadata subtypes. The default value is 0.
 
 * __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
+
+* __tileEntity__: This is a ResourceLocation defining what tile entity the block is using. Use the id of the tile entity together with the mod id. Supports metadata subtypes. Default is no tile entity.
+
+* __gui__: This is a ResourceLocation defining what gui is being opened when right-clicking the block. Use the id of the gui together with the mod id. Supports metadata subtypes. Default is no gui.
 
 # Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
