@@ -7,7 +7,7 @@ Type name: __shapedRecipe__
   "shape": ["SS", "DX"],
   "items": {
     "S": "minecraft:stone@all",
-    "D": "minecraft:diamond_block"
+    "D": "ore:blockDiamond"
   },
   "result": {
     "item": "minecraft:obsidian",
