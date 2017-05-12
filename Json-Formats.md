@@ -156,3 +156,38 @@ There are two ways to define a color: using a hex code and using the name of the
 ```
 
 The following color names are available: black, white, red, lime, blue, yellow, aqua, magenta, silver, gray, maroon, olive, green, purple, teal, navy
+
+# ItemFilter
+An ItemFilter is used to filter item stacks, for example for shift-click rules in container GUIs.
+
+There are multiple ways to specify a filter:
+
+```json
+"machineInput:recipe_list"
+```
+This one accepts all stacks that are a part of the input of a machine recipe from the `recipe_list` list.
+
+```json
+"machineFuel:fuel_list"
+```
+This one accepts all stacks that are a part of the fuel for a machine from the `fuel_list` list.
+
+```json
+"ore:stickWood"
+```
+This one accepts all stacks that are registered for the `stickWood` ore class.
+
+```json
+{
+	"item": "minecraft:dye",
+	"metadata": 5
+}
+
+"minecraft:dye@5"
+```
+Both accept only the dye with metadata 5.
+
+```json
+["ore:stickWood", "minecraft:apple"]
+```
+This one accepts all stacks that are in the `stickWood` ore class or is an apple.
