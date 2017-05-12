@@ -46,6 +46,49 @@ This module adds a simple inventory to the tile entity. It has the following att
 * __size__: This defines how many slots the inventory has.
 * __sides__: This defines from what sides the inventory can be accessed, for example by the hopper. The default is all sides.
 
+## Crafting
+Type name: __crafting__
+
+This module adds crafting functionality to the tile entity. It has the following attributes:
+
+```json
+{
+	"rows": 2,
+	"columns": 3,
+	"recipeList": "mymod:myrecipelist"
+}
+```
+
+* __rows__, __columns__: The number of rows and columns of the crafting area. Both have to be 1, 2 or 3. Default value is 3.
+* __recipeList__: This defines what recipes can be used. For vanilla recipes use "minecraft:vanilla". Default value is "minecraft:vanilla".
+
+This module has rows * columns+1 slots: rows * columns for the input area and one for the recipe output. Input slots are numbered from left to right and top to bottom.
+
+## Machine
+Type name: __machine__
+
+This module adds machine functionality to the tile entity, for example a furnace. It has the following attributes:
+
+```json
+{
+	"inputSlots": 2,
+	"outputSlots": 2,
+	"fuelSlots": 2,
+	"cookTime": 150,
+	"recipeList": "mymod:machinerecipes",
+	"fuelList": "mymod:machinefuel"
+}
+```
+
+* __inputSlots__: The number of input slots that the machine uses. Default value is 1.
+* __outputSlots__: The number of output slots that the machine uses. Default value is 1.
+* __fuelSlots__: The number of fuel slots for this machine. Note that two slots mean that the machine burns two items at once. Setting this to 0 means the machine works without fuel. Default value is 1.
+* __cookTime__: The number of ticks a recipe takes to finish. If a recipe has its own cook time, the recipes time is used instead. Default value is 200.
+* __recipeList__: This defines what recipes can be used. For vanilla furnace recipes use "minecraft:vanilla". Default value is "minecraft:vanilla".
+* __fuelList__: This defines what items can be used as fuel. For vanilla furnace fuel use "minecraft:vanilla". Default value is "minecraft:vanilla".
+
+The slots are numbered like this: input then output then fuel.
+
 # Simple
 Type name: __tileentity:simple__
 
