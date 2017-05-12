@@ -13,7 +13,9 @@ Type name: __shapedRecipe__
     "item": "minecraft:obsidian",
     "amount": 3
   },
-  "mirrored": false
+  "mirrored": false,
+  "remove": false,
+  "recipeList": "mymod:myrecipes"
 }
 ```
 	
@@ -24,6 +26,8 @@ Type name: __shapedRecipe__
 * __result__: This is an ItemStack defining the result of the recipe.
 
 * __mirrored__: This is either _true_ or _false_ and specifies whether the accepts the mirrored version of the shape. This is optional and defaults to _true_.
+* __remove__: If true, the recipe will be removed instead of added. If true, either result or shape and items can be omitted which will remove all recipe that match the input or result. Default value is false.
+* __recipeList__: The list to add or remove the recipe from.
 
 # Shapeless Recipes
 
@@ -38,10 +42,14 @@ Type name: __shapelessRecipe__
   "result": {
     "item": "minecraft:obsidian",
     "amount": 3
-  }
+  },
+  "remove": false,
+  "recipeList": "mymod:myrecipes"
 }
 ```
 	
 * __items__: This is a list of RecipeInput and defines the items that are required for the recipe. You may use "all" for metadata. Specifying _nbt_ here has no effect.
 
 * __result__: This is an ItemStack defining the result of the recipe.
+* __remove__: If true, the recipe will be removed instead of added. If true, either result or items can be omitted which will remove all recipe that match the input or result. Default value is false.
+* __recipeList__: The list to add or remove the recipe from.
