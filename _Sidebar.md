@@ -25,3 +25,5 @@ __[[Tile Entities]]__
 __[[GUIs]]__
 
 __[[World Generation]]__
+
+__[[Machine Recipes and Fuel]]__
