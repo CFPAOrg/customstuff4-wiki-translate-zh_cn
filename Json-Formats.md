@@ -32,7 +32,7 @@ A NBTTagCompound is defined as a string containg the nbt data:
 "{display:{Name:\"Some Obsidian\"}}"
 ```
 	
-#ItemStack
+# ItemStack
 There a multiple ways of specifying an item stack:
 
 ```json
@@ -51,6 +51,14 @@ For some recipes you may want to allow all metadata variants. This can be done l
 {
   "item": "minecraft:stone",
   "metadata": "all",
+  "amount": 42
+}
+```
+
+Or like this:
+```json
+{
+  "item": "minecraft:stone@all",
   "amount": 42
 }
 ```
