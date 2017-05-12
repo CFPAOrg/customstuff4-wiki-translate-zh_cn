@@ -27,7 +27,8 @@ This gui can have inventory slots. The following attributes are available:
       "rows": 3,
       "columns": 9,
       "x": 8,
-      "y": 17
+      "y": 17,
+      "dropOnClose": true
     },
     {
       "name": "player",
@@ -52,7 +53,8 @@ This gui can have inventory slots. The following attributes are available:
     },
     {
       "from": [27, 62],
-      "to": [0, 26]
+      "to": [0, 26],
+      "filter": "ore:stickWood"
     }
   ],
   "labels": [
@@ -60,13 +62,25 @@ This gui can have inventory slots. The following attributes are available:
       "text": "container.chest",
       "x": 8,
       "y": 6,
-	  "color": "red",
-	  "dropShadow": true
+      "color": "red",
+      "dropShadow": true
     },
     {
       "text": "container.inventory",
       "x": 8,
       "y": 73
+    }
+  ],
+  "progressBars": [
+    {
+      "source": "machine:burnTime",
+      "x": 56,
+      "y": 36,
+      "width": 14,
+      "height": 13,
+      "texX": 176,
+      "texY": 0,
+      "direction": "up"
     }
   ]
 }
@@ -81,14 +95,22 @@ This gui can have inventory slots. The following attributes are available:
 	* __firstSlot__: This is the index of the first slot from the inventory that is being used. This is usefull if you want one inventory to split into multiple areas. The player inventory, for example, is split into the hotbar and the non-hotbar areas. The default value is 0.
 	* __rows__, __columns__: These define in how many rows and columns is separated in. They also define how many slots are added (rows * columns = totalSlots). Default values are 1.
 	* __x__, __y__: These define where the top-left slot is positioned in the GUI, relative to the background.
+	* __dropOnClose__: This defines whether the items in the slots should be dropped when closing the GUI. Default value is false.
 * __shiftClickRules__: This a list of rules that define what happens when you shift-click a slot. In the example above, the first slots have indices 0 to 26, the second 27 to 53 and the last 54 to 62.
 	* __from__: This defines the index of the first and last slot that the rule applies to.
 	* __to__: This defines the index of the first and last slot that a itemstack is transferred to. If the first index is greater than the second index, it'll search in reverse order for a valid slot to put the stack to.
+	* __filter__: This is a ItemFilter that defines what items this rule applies to. Default value allows all items.
 * __labels__: This is a list of labels that are drawn onto the GUI.
 	* __text__: The text that is being drawn.
 	* __x__, __y__: The position of the text relative to the background.
 	* __color__: This is a Color defining the color of the text. Default value is "404040".
 	* __dropShadow__: Whether to draw the drop shadow. Default value is false.
+* __progressBars__: This is a list of progress bars that are drawn onto the GUI.
+	* __x__, __y__: The position of the bar relative to the background.
+	* __texX__, __texY__: These define where in the background texture the progress bar is located.
+	* __width__, __height__: The width and height of the bar when completely filled.
+	* __direction__: The direction in which the bar fills. One of: up, down, left, right.
+	* __source__: This defines where the progress for the bar comes from. For example, machine:burnTime, uses the burnTime from the tile entity module with the name machine.
 
 
 
