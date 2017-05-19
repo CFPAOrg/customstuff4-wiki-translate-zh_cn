@@ -126,13 +126,13 @@ As the name suggests, this item type is for food. It supports metadata subtypes.
 
 * __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
 * __healAmount__: The amount the item heals the player. Supports metadata subtypes. The default value is 2.
-* __saturation__: The amount of saturation that this food provides. The default value is 0.6.
-* __alwaysEdible__: This defines whether the food can be eaten even if the player has a filled food bar. The default value is false.
-* __potionEffect__: This is a PotionEffect that defines what effect is being added to the player. Omit if no effect should be added.
-* __potionEffectProbability__: This defines the probability that the potion effect is being added to the player. 0.5 means a 50% chance, 1.0 means it is being added everytime. The default value is 1.0.
+* __saturation__: The amount of saturation that this food provides. The default value is 0.6. Supports metadata subtypes.
+* __alwaysEdible__: This defines whether the food can be eaten even if the player has a filled food bar. The default value is false. Supports metadata subtypes.
+* __potionEffect__: This is a PotionEffect that defines what effect is being added to the player. Omit if no effect should be added. Supports metadata subtypes.
+* __potionEffectProbability__: This defines the probability that the potion effect is being added to the player. 0.5 means a 50% chance, 1.0 means it is being added everytime. The default value is 1.0. Supports metadata subtypes.
 * __isWolfFood__: This defines whether wolves like this food. The default value is false.
-* __result__: This is a ItemStack that, if defined, sets the item that is returned to the inventory when the food has been eaten.
-* __useAction__: This is either eat or drink and defines whether the player eats or drinks this food.
+* __result__: This is a ItemStack that, if defined, sets the item that is returned to the inventory when the food has been eaten. Supports metadata subtypes.
+* __useAction__: This is either eat or drink and defines whether the player eats or drinks this food. Supports metadata subtypes.
 
 
 
