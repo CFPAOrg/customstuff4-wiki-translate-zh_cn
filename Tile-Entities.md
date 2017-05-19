@@ -3,14 +3,14 @@ Some attributes are used by all types of tile entities:
 
 ```json
 {
-	"id" : "mytileentity",
-	"modules" : [
-		{
-			"type": "inventory",
-			"name": "inv1",
-			"size": 27
-		}
-	]
+  "id": "mytileentity",
+  "modules": [
+    {
+      "type": "inventory",
+      "name": "inv1",
+      "size": 27
+    }
+  ]
 }
 ```
 
