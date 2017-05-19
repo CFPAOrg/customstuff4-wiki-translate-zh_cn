@@ -6,7 +6,8 @@ Some attributes are used by all types of items:
 	"id" : "myitem",
 	"model" : "mymod:myitemmodel",
 	"creativeTab" : "tools",
-	"information" : ["First line", "Second line"]
+	"information" : ["First line", "Second line"],
+	"maxDamage": 9
 }
 ```
 
@@ -17,6 +18,8 @@ Some attributes are used by all types of items:
 * __creativeTab__: This defines the creative tab that the item appears in. Omit to make it not appear in any tab. Supports metadata subtypes.
 
 * __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
+
+* __maxDamage__: This defines if the item is damageable and by what amount it can be damaged. If using this, you can't use metadata subtypes for this item.
 
 # Metadata Subtypes
 Some item types support metadata subtypes. That means the item can have different models, names or other things depending on their metadata value. For example dye is an example for this: each color is a metadata subtype of the same item.
@@ -115,7 +118,9 @@ As the name suggests, this item type is for food. It supports metadata subtypes.
 		"duration" : 120
 	},
 	"potionEffectProbability" : 0.5,
-	"isWolfFood" : false
+	"isWolfFood" : false,
+	"result": "minecraft:glass_bottle",
+	"useAction": "eat"
 }
 ```
 
@@ -126,3 +131,9 @@ As the name suggests, this item type is for food. It supports metadata subtypes.
 * __potionEffect__: This is a PotionEffect that defines what effect is being added to the player. Omit if no effect should be added.
 * __potionEffectProbability__: This defines the probability that the potion effect is being added to the player. 0.5 means a 50% chance, 1.0 means it is being added everytime. The default value is 1.0.
 * __isWolfFood__: This defines whether wolves like this food. The default value is false.
+* __result__: This is a ItemStack that, if defined, sets the item that is returned to the inventory when the food has been eaten.
+* __useAction__: This is either eat or drink and defines whether the player eats or drinks this food.
+
+
+
+
