@@ -71,12 +71,15 @@ This module adds machine functionality to the tile entity, for example a furnace
 
 ```json
 {
-	"inputSlots": 2,
-	"outputSlots": 2,
-	"fuelSlots": 2,
-	"cookTime": 150,
-	"recipeList": "mymod:machinerecipes",
-	"fuelList": "mymod:machinefuel"
+  "inputSlots": 2,
+  "outputSlots": 2,
+  "fuelSlots": 2,
+  "cookTime": 150,
+  "recipeList": "mymod:machinerecipes",
+  "fuelList": "mymod:machinefuel",
+  "sidesInput": ["up"],
+  "sidesOutput": ["down"],
+  "sidesFuel": ["north", "south", "east", "west"]
 }
 ```
 
@@ -86,6 +89,7 @@ This module adds machine functionality to the tile entity, for example a furnace
 * __cookTime__: The number of ticks a recipe takes to finish. If a recipe has its own cook time, the recipes time is used instead. Default value is 200.
 * __recipeList__: This defines what recipes can be used. For vanilla furnace recipes use "minecraft:vanilla". Default value is "minecraft:vanilla".
 * __fuelList__: This defines what items can be used as fuel. For vanilla furnace fuel use "minecraft:vanilla". Default value is "minecraft:vanilla".
+* __sidesInput__, __sidesOutput__, __sidesFuel__: This defines from what sides the different slots can be accessed, for example by the hopper. Default value is as seen above.
 
 The slots are numbered like this: input then output then fuel.
 
