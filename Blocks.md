@@ -23,7 +23,9 @@ Some attributes are used by all types of blocks:
 	"expDrop" : [0, 1],
 	"information" : [ "First line", "Second line"],
 	"tileEntity": "mymod:mytileentity",
-	"gui": "mymod:mygui"
+	"gui": "mymod:mygui",
+	"drop": "minecraft:dirt",
+	"isFullCube": true
 }
 ```
 
@@ -68,6 +70,10 @@ Some attributes are used by all types of blocks:
 * __tileEntity__: This is a ResourceLocation defining what tile entity the block is using. Use the id of the tile entity together with the mod id. Supports metadata subtypes. Default is no tile entity.
 
 * __gui__: This is a ResourceLocation defining what gui is being opened when right-clicking the block. Use the id of the gui together with the mod id. Supports metadata subtypes. Default is no gui.
+
+* __drop__: This is a ItemStack that, if defined, changes what the block drops when harvested. Use `minecraft:air ` to make it not drop anything. Supports metadata subtypes.
+
+* __isFullCube__: Defines whether this block is a full cube. If false, connected sides of neighbouring blocks will be rendered.
 
 # Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
