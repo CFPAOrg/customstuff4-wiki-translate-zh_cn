@@ -28,7 +28,9 @@ This gui can have inventory slots. The following attributes are available:
       "columns": 9,
       "x": 8,
       "y": 17,
-      "dropOnClose": true
+      "dropOnClose": true,
+      "spacingX": 18,
+      "spacingY": 18
     },
     {
       "name": "player",
@@ -96,6 +98,7 @@ This gui can have inventory slots. The following attributes are available:
 	* __rows__, __columns__: These define in how many rows and columns is separated in. They also define how many slots are added (rows * columns = totalSlots). Default values are 1.
 	* __x__, __y__: These define where the top-left slot is positioned in the GUI, relative to the background.
 	* __dropOnClose__: This defines whether the items in the slots should be dropped when closing the GUI. Default value is false.
+	* __spacingX__, __spacingY__: The defines the spacing between the individual slots. Default value is 18.
 * __shiftClickRules__: This a list of rules that define what happens when you shift-click a slot. In the example above, the first slots have indices 0 to 26, the second 27 to 53 and the last 54 to 62.
 	* __from__: This defines the index of the first and last slot that the rule applies to.
 	* __to__: This defines the index of the first and last slot that a itemstack is transferred to. If the first index is greater than the second index, it'll search in reverse order for a valid slot to put the stack to.
