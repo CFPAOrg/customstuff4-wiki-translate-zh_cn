@@ -3,10 +3,10 @@ Type name: __machineRecipe__
 
 ```json
 {
-	"input": ["ore:ingotGold", "minecraft:apple"],
-	"output": ["minecraft:gold_ingot", { "item": "minecraft:golden_apple", "chance": 0.25 }],
-	"cookTime": 400,
-	"recipeList": "mymod:machinerecipes"
+  "input": [{"ore": "ingotGold", "amount": 4}, "minecraft:apple"],
+  "output": ["minecraft:gold_ingot", {"item": "minecraft:golden_apple", "chance": 0.25}],
+  "cookTime": 400,
+  "recipeList": "mymod:machinerecipes"
 }
 ```
 
