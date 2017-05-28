@@ -84,6 +84,17 @@ This gui can have inventory slots. The following attributes are available:
       "texY": 0,
       "direction": "up"
     }
+  ],
+  "fluidDisplays": [
+    {
+      "source": "tank1",
+      "x": 50,
+      "y": 60,
+      "width": 32,
+      "height": 100,
+      "overlayTexX": 166,
+      "overlayTexY": 0
+    }
   ]
 }
 ```
@@ -114,6 +125,12 @@ This gui can have inventory slots. The following attributes are available:
 	* __width__, __height__: The width and height of the bar when completely filled.
 	* __direction__: The direction in which the bar fills. One of: up, down, left, right.
 	* __source__: This defines where the progress for the bar comes from. For example, machine:burnTime, uses the burnTime from the tile entity module with the name machine.
+* __fluidDisplays__: This is a list of fluid displays that are drawn onto the GUI.
+	* __x__, __y__: The position of the display relative to the background.
+	* __width__, __height__: The size of display.
+	* __overlayTexX__, __overlayTexY__: If the tank has a overlay that is drawn onto the fluid, these define where in the background texture that overlay is located. The overlay has the same size as the display itself.
+	* __source__: This defines where the data for the display is from. This can, for example, be the id of a tank module.
+	
 
 
 
