@@ -79,7 +79,9 @@ This module adds machine functionality to the tile entity, for example a furnace
   "fuelList": "mymod:machinefuel",
   "sidesInput": ["up"],
   "sidesOutput": ["down"],
-  "sidesFuel": ["north", "south", "east", "west"]
+  "sidesFuel": ["north", "south", "east", "west"],
+  "inputTanks": ["input_tank"],
+  "outputTanks": ["output_tank"]
 }
 ```
 
@@ -90,8 +92,28 @@ This module adds machine functionality to the tile entity, for example a furnace
 * __recipeList__: This defines what recipes can be used. For vanilla furnace recipes use "minecraft:vanilla". Default value is "minecraft:vanilla".
 * __fuelList__: This defines what items can be used as fuel. For vanilla furnace fuel use "minecraft:vanilla". Default value is "minecraft:vanilla".
 * __sidesInput__, __sidesOutput__, __sidesFuel__: This defines from what sides the different slots can be accessed, for example by the hopper. Default value is as seen above.
+* __inputTanks__, __outputTanks__: Defines the tanks that are used for the input and output of a recipe that uses fluids. The tanks have to be modules of the same tile entity. Default value is no tanks at all.
 
 The slots are numbered like this: input then output then fuel.
+
+## Tank
+Type name: __tank__
+
+This module adds a fluid tank to the tile entity. It has the following attributes:
+
+```json
+{
+  "capacity": 10000,
+  "canDrain": true,
+  "canFill": true,
+  "sides": ["north", "south", "east", "west", "up", "down"]
+}
+```
+
+* __capacity__: The tank's capacity. Default values is 10000.
+* __canDrain__: If the tank can be drained. Default value is true.
+* __canFill__: If the tank can be filled. Default values is true.
+* __sides__: Defines the sides from which the tank can accessed by clicking with a fluid container, pipe, etc. Default value is all sides.
 
 # Simple
 Type name: __tileentity:simple__
