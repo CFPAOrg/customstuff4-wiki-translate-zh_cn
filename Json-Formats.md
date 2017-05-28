@@ -199,3 +199,30 @@ Both accept only the dye with metadata 5.
 ["ore:stickWood", "minecraft:apple"]
 ```
 This one accepts all stacks that are in the `stickWood` ore class or is an apple.
+
+# FluidStack
+A FluidStack defines a fluid and an amount of that fluid. If no amount is specified 1000 is used.
+
+```json
+"water"
+```
+
+```json
+"water@500"
+```
+Uses 500 for the amount.
+
+```json
+{
+    "fluid": "water@500"
+}
+```
+Uses 500 for the amount.
+
+```json
+{
+    "fluid": "water",
+    "amount": 200
+}
+```
+Uses 200 for the amount.
