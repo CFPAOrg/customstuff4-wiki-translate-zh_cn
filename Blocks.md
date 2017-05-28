@@ -252,3 +252,63 @@ This is a half slab lock. It supports metadata subtypes 0 to 7. It has one addit
 ```
 
 * __doubleSlab__: This is a BlockState defining what two half slabs are being combined to. Supports metadata subtypes. If omitted, slabs can't be combined.
+
+# Fluid
+Type name: __block:fluid__
+
+This is a fluid block. The id of this block will also be the id of the fluid (without the mod prefix), so don't use something like water or lava as those already exist. It does not support metadata subtypes. It has the following additional attributes:
+
+```json
+{
+  "density": 1000,
+  "temperature": 300,
+  "viscosity": 1000,
+  "flowLength": 8,
+  "isGaseous": false,
+  "canCreateSource":  false,
+  "addUniversalBucket": true,
+  "texStill": "cs4examplemod:blocks/fluid_still",
+  "texFlowing": "cs4examplemod:blocks/fluid_flow"
+}
+```
+
+* __density__: Defines the density of the fluid. Negative density indicates that the fluid is lighter than air. Default value is 1000.
+* __temperature__: Defines the temperature of the fluid in Kelvin. Default value is 300.
+* __viscosity__: Defines the viscosity ("thickness") of the fluid. Higher value means that a fluid flows more slowly, lower value means more quickly. Default values is 1000.
+* __flowLength__: Defines how far away the fluid flows from a source block. Value should be between 0 and 15. Default value is 8.
+* __isGaseous__: Indicates if the fluid is gaseous. Default value is false.
+* __canCreateSource__: Defines whether two source blocks can create another source block, like water. Default value is false.
+* __addUniversalBucket__: Defines whether the fluid can be picked up by forge's universal bucket. Default value is true.
+* __texStill__, __texFlowing__: The still and flowing textures for the fluid.
+
+The block state file for the fluid should look like this (replace examplefluid with the id of your fluid):
+
+```json
+{
+    "forge_marker": 1,
+    "defaults": {
+    	"model": "forge:fluid",
+        "custom": { "fluid": "examplefluid" }
+    },
+    "variants": {
+    	"level": {
+        	"0": {"model": "forge:fluid"},
+        	"1": {"model": "forge:fluid"},
+        	"2": {"model": "forge:fluid"},
+        	"3": {"model": "forge:fluid"},
+        	"4": {"model": "forge:fluid"},
+        	"5": {"model": "forge:fluid"},
+        	"6": {"model": "forge:fluid"},
+        	"7": {"model": "forge:fluid"},
+        	"8": {"model": "forge:fluid"},
+        	"9": {"model": "forge:fluid"},
+        	"10": {"model": "forge:fluid"},
+        	"11": {"model": "forge:fluid"},
+        	"12": {"model": "forge:fluid"},
+        	"13": {"model": "forge:fluid"},
+        	"14": {"model": "forge:fluid"},
+        	"15": {"model": "forge:fluid"}
+        }
+    }
+}
+```
