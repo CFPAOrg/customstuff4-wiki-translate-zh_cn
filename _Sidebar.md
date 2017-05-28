@@ -16,6 +16,8 @@ __[[Tool Tips]]__
 
 __[[GUI Modifiers]]__
 
+__[[Fluid Modifier]]__
+
 __[[Items]]__
 
 __[[Blocks]]__
