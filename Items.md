@@ -13,7 +13,7 @@ Some attributes are used by all types of items:
 
 * __id__: This is the unique id of the item. This is used to reference the item in recipes or in the lang file. This has to be all lowercase and must not contain spaces. It only has to be unique in your mod. If your mod id is _mymod_ and the item id is _myitem_, you reference the item with _mymod:myitem_.
 
-* __model__: This defines the model file that is being used. In the example above the file is located in _assets/mymod/models/item/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes.
+* __model__: This defines the model file that is being used. In the example above the file can be  located in _assets/mymod/models/item/myitemmodel.json_ or _assets/mymod/blockstates/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes. Default value is "[modid]:[itemid]".
 
 * __creativeTab__: This defines the creative tab that the item appears in. Omit to make it not appear in any tab. Supports metadata subtypes.
 
@@ -134,6 +134,42 @@ As the name suggests, this item type is for food. It supports metadata subtypes.
 * __result__: This is a ItemStack that, if defined, sets the item that is returned to the inventory when the food has been eaten. Supports metadata subtypes.
 * __useAction__: This is either eat or drink and defines whether the player eats or drinks this food. Supports metadata subtypes.
 
+# Fluid Container
+Type name: __item:fluidContainer__
 
+This will create a container that can hold any fluid. It does not support metadata subtypes. It has one additional attribute:
+
+```json
+{
+	"capacity" : 1000
+}
+```
+
+* __capacity__: The capacity of the container. Default value is 1000.
+
+To correctly use the model that dynamically uses the fluid texture, put the following model file to the blockstates folder:
+
+```json
+{
+  "forge_marker": 1,
+  "variants": {
+    "inventory": {
+      "model": "forge:forgebucket",
+      "textures": {
+        "base": "cs4examplemod:items/fluid_container_base",
+        "fluid": "cs4examplemod:items/fluid_container_fluid",
+        "cover": "cs4examplemod:items/fluid_container_cover"
+      },
+      "transform": "forge:default-item",
+      "custom": {
+        "fluid": "water",
+        "flipGas": true
+      }
+    }
+  }
+}
+```
+
+You only need to modify the textures. The model has 3 layers: base, fluid and cover. Base is the background. Fluid is a white-only texture where the white part is replaced with the fluid texture. Cover is rendered on top of the base and fluid.
 
 
