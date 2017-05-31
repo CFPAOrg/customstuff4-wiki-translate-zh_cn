@@ -170,6 +170,21 @@ The following sound types can be used.
 * stone
 * wood
 
+# Creative Tabs
+
+* brewing
+* buildingBlocks
+* combat
+* decorations
+* food
+* inventory
+* materials
+* misc
+* redstone
+* search
+* tools
+* transportation
+
 # Block States
 The blockstate file defines what model the block uses depending on its state. For example the metadata subtype is a state. A simple blockstate file for a block using subtypes might look like this:
 
