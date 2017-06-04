@@ -29,3 +29,5 @@ __[[GUIs]]__
 __[[World Generation]]__
 
 __[[Machine Recipes and Fuel]]__
+
+__[[JEI]]__
