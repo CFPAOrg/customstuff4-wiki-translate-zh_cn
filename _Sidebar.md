@@ -22,6 +22,8 @@ __[[Items]]__
 
 __[[Blocks]]__
 
+__[[Creative Tabs]]__
+
 __[[Tile Entities]]__
 
 __[[GUIs]]__
@@ -29,5 +31,7 @@ __[[GUIs]]__
 __[[World Generation]]__
 
 __[[Machine Recipes and Fuel]]__
+
+__[[IMC]]__
 
 __[[JEI]]__
