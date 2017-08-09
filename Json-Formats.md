@@ -163,7 +163,7 @@ There are two ways to define a color: using a hex code and using the name of the
 "red"
 ```
 
-The following color names are available: black, white, red, lime, blue, yellow, aqua, magenta, silver, gray, maroon, olive, green, purple, teal, navy
+The following color names are available: black, white, red, lime, blue, yellow, aqua, magenta, silver, gray, maroon, olive, green, purple, teal, navy, foliagePine, foliageBirch, foliageBasic
 
 # ItemFilter
 An ItemFilter is used to filter item stacks, for example for shift-click rules in container GUIs.
