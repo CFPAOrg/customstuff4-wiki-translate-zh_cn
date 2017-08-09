@@ -226,3 +226,38 @@ Uses 500 for the amount.
 }
 ```
 Uses 200 for the amount.
+
+# BoundingBox
+A BoundingBox defines a box shape in 3d space.
+
+```json
+{
+    "from": [0, 0, 0],
+    "to": [1, 1, 1]
+}
+```
+A bounding box for a full cube. The elements in the lists are in the order xyz.
+
+```json
+{
+    "cube": 1
+}
+```
+Using cube will use `[0, 0, 0]` for the from part and the specified value for all elements of the to part. So this also defines a full cube.
+
+```json
+{
+    "from": [0, 0, 0],
+    "to": [0.8, 0.8, 0.8],
+    "offset": [0.1, 0.1, 0.1]
+}
+```
+The values defined in the offset part are being added to both from and to.
+
+```json
+{
+    "cube": 0.8,
+    "offset": [0.1, 0.1, 0.1]
+}
+```
+This defines the same bounding box as before but using cube instead.
