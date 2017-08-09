@@ -24,8 +24,23 @@ Some attributes are used by all types of blocks:
 	"information" : [ "First line", "Second line"],
 	"tileEntity": "mymod:mytileentity",
 	"gui": "mymod:mygui",
-	"drop": "minecraft:dirt",
-	"isFullCube": true
+	"drop": ["minecraft:dirt", {"item" : "minecraft:stone", "amount": [1,4] } ],
+	"isFullCube": false,
+	"isOpaqueCube": false,
+	"isBurning": false,
+	"bounds": { "cube": 0.5, "offset": [0.25, 0.25, 0.25] },
+	"slectionBounds": { "cube": 1 },
+	"collisionBounds": { "cube": 0.5, "offset": [0.25, 0.25, 0.25] },
+	"tint": "foliage",
+	"itemTint": "foliageBasic",
+	"renderLayer": "solid",
+	"canSilkHarvest": false,
+	"harvestTool": "axe",
+	"harvestLevel": 3,
+	"canPlaceOnCeiling": true,
+	"canPlaceOnFloor": true,
+	"canPlaceOnSides": true,
+	"sustainedPlants": "Crop"
 }
 ```
 
@@ -71,9 +86,33 @@ Some attributes are used by all types of blocks:
 
 * __gui__: This is a ResourceLocation defining what gui is being opened when right-clicking the block. Use the id of the gui together with the mod id. Supports metadata subtypes. Default is no gui.
 
-* __drop__: This is a ItemStack that, if defined, changes what the block drops when harvested. Use `minecraft:air ` to make it not drop anything. Supports metadata subtypes.
+* __drop__: This is either one or multiple ItemStack that, if defined, changes what the block drops when harvested. Use `minecraft:air ` to make it not drop anything. In addition to regular ItemStacks you can define a range for the amount like this `[1, 4]` which make the block drop randomly between 1 and 4 items. Supports metadata subtypes.
 
-* __isFullCube__: Defines whether this block is a full cube. If false, connected sides of neighbouring blocks will be rendered.
+* __isFullCube__: Defines whether this block is a full cube. If false, connected sides of neighbouring blocks will be rendered. Supports metadata subtypes.
+
+* __isOpaqueCube__: Defines whether this block is opaque. If the block is not a full cube or has transparent textures, this should be set to false. Supports metadata subtypes.
+
+* __isBurning__: Defines whether this block should set entities on fire when they get in contact with the block. Note that the collision bounding box needs to be slightly smaller than a full cube for this to work. Supports metadata subtypes.
+
+* __bounds__:  This is a BoundingBox. Defines the bounding box of the block. This box is used to check if you mouse over the block. If not specified aswell, this will also set the selection and collision bounding box. Supports metadata subtypes.
+
+* __selectionBounds__: This is a BoundingBox. Defines the highlighted wireframe box that is shown when you mouse over the block. Supports metadata subtypes.
+
+* __collisionBounds__:  This is a BoundingBox. Defines the box that entities actually collide with. Supports metadata subtypes.
+
+* __tint__: Defines the tint that is applied to the block in the world. These is either a color or one of foliage, grass or water which will tint the block depending on the biome. Supports metadata subtypes.
+
+* __itemTint__: Defines the tint of item associated with the block. This is a color. Supports metadata subtypes.
+
+* __renderLayer__: This defines block render layer and should depend on the texture of the block. If the texture has no transparent parts use `solid` or omit it. If it has transparent parts use either `cutout` or `mippedCutout` where ther latter will make the texture to be mip-mapped. If the texture has semi-transparent parts use `translucent`.
+
+* __canSilkHarvest__: Defines whether the block can be silk harvested. Default value is true. Supports metadata subtypes.
+
+* __harvestTool__, __harvestLevel__: Defines the tool and level that is required to effectively harvest the block. Note that if the block's material is iron or rock it will always be harvestable by pickaxes. Support metadata subtypes.
+
+* __sustainedPlants__: Defines what plants are sustained by the block. You can use one or multiple of: Plains, Desert, Beach, Cave, Water, Nether, Crop. Supports metadata subtypes.
+
+* __canPlaceOnFloor__, __canPlaceOnCeiling__, __canPlaceOnSides__: Defines whether the block can placed into the world by clicking the top, bottom or horizontal sides of another block. Supports metadata subtypes.
 
 # Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
