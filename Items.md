@@ -7,7 +7,8 @@ Some attributes are used by all types of items:
 	"model" : "mymod:myitemmodel",
 	"creativeTab" : "tools",
 	"information" : ["First line", "Second line"],
-	"maxDamage": 9
+	"maxDamage": 9,
+	"tint": "red"
 }
 ```
 
@@ -20,6 +21,8 @@ Some attributes are used by all types of items:
 * __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
 
 * __maxDamage__: This defines if the item is damageable and by what amount it can be damaged. If using this, you can't use metadata subtypes for this item.
+
+* __tint__: Adds a tint to the item. This is a color. Supports metadata subtypes.
 
 # Metadata Subtypes
 Some item types support metadata subtypes. That means the item can have different models, names or other things depending on their metadata value. For example dye is an example for this: each color is a metadata subtype of the same item.
