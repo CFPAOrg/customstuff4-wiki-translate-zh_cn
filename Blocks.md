@@ -112,7 +112,7 @@ Some attributes are used by all types of blocks:
 
 * __sustainedPlants__: Defines what plants are sustained by the block. You can use one or multiple of: Plains, Desert, Beach, Cave, Water, Nether, Crop. Supports metadata subtypes.
 
-* __canPlaceOnFloor__, __canPlaceOnCeiling__, __canPlaceOnSides__: Defines whether the block can placed into the world by clicking the top, bottom or horizontal sides of another block. Supports metadata subtypes.
+* __canPlaceOnFloor__, __canPlaceOnCeiling__, __canPlaceOnSides__: Defines whether the block can placed into the world by clicking the top, bottom or horizontal sides of another block.
 
 # Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
