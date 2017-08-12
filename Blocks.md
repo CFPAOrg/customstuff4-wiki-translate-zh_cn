@@ -287,7 +287,20 @@ Block state properties: subtype.
 # Stairs
 Type name: __block:stairs__
 
-This is a stairs block. It does not support metadata subtypes. There are no additional attributes for this block.
+This is a stairs block. It does not support metadata subtypes. It has one additional attribute:
+
+```json
+{
+  "modelState": {
+    "block": "minecraft:log",
+    "properties": {
+      "variant": "spruce"
+    }
+  }
+}
+```
+
+* __modelState__: This is a BlockState defining which block this stair is made from. This state will define some properties of the stair, such as the material.
 
 Block state properties: facing, half and shape. Facing can be _north_, _south_, _east_ and _west_. Half can be _bottom_ and _top_. Shape can be _straight_, _outer_right_, _outer_left_, _inner_right_ and _inner_left_.
 
@@ -306,6 +319,8 @@ This is a half slab lock. It supports metadata subtypes 0 to 7. It has one addit
 ```
 
 * __doubleSlab__: This is a BlockState defining what two half slabs are being combined to. Supports metadata subtypes. If omitted, slabs can't be combined.
+
+Block state properties: subtype and half. Half can be either _top_ or _bottom_.
 
 # Fluid
 Type name: __block:fluid__
