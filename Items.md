@@ -8,7 +8,8 @@ Some attributes are used by all types of items:
 	"creativeTab" : "tools",
 	"information" : ["First line", "Second line"],
 	"maxDamage": 9,
-	"tint": "red"
+	"tint": "red",
+	"burnTime": 100
 }
 ```
 
@@ -23,6 +24,8 @@ Some attributes are used by all types of items:
 * __maxDamage__: This defines if the item is damageable and by what amount it can be damaged. If using this, you can't use metadata subtypes for this item.
 
 * __tint__: Adds a tint to the item. This is a color. Supports metadata subtypes.
+
+* __burnTime__: Defines the number of ticks that the item provides fuel for a furnace. -1 lets the furnace decide on this. Supports metadata subtypes. Default value is -1.
 
 # Metadata Subtypes
 Some item types support metadata subtypes. That means the item can have different models, names or other things depending on their metadata value. For example dye is an example for this: each color is a metadata subtype of the same item.
