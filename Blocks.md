@@ -40,7 +40,9 @@ Some attributes are used by all types of blocks:
 	"canPlaceOnCeiling": true,
 	"canPlaceOnFloor": true,
 	"canPlaceOnSides": true,
-	"sustainedPlants": "Crop"
+	"sustainedPlants": "Crop",
+	"burnTime": 100,
+	"slipperiness": 0.6
 }
 ```
 
@@ -113,6 +115,10 @@ Some attributes are used by all types of blocks:
 * __sustainedPlants__: Defines what plants are sustained by the block. You can use one or multiple of: Plains, Desert, Beach, Cave, Water, Nether, Crop. Supports metadata subtypes.
 
 * __canPlaceOnFloor__, __canPlaceOnCeiling__, __canPlaceOnSides__: Defines whether the block can placed into the world by clicking the top, bottom or horizontal sides of another block.
+
+* __burnTime__: Defines the number of ticks that the block provides fuel for a furnace. -1 lets the furnace decide on this, for example if the block's material is wood. Supports metadata subtypes. Default value is -1.
+
+* __slipperiness__: Defines how much velocity is maintained while moving on top of the block. Supports metadata subtypes. Default value is 0.6.
 
 # Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
