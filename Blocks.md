@@ -153,7 +153,7 @@ You can still define the attribute like this:
 
 This will set the value for all subtypes.
 
-#Lang File
+# Lang File
 The lang files are located in _assets/themodid/lang_.
 
 The lang file entry for a block without subtypes looks like this:
