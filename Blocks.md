@@ -387,3 +387,50 @@ The block state file for the fluid should look like this (replace examplefluid w
     }
 }
 ```
+
+# Carpet
+Type name: __block:carpet__
+
+This is a carpet block. It supports all 16 metadata subtypes. There are no additional attributes for this block.
+
+Block state properties: subtype.
+
+# Snow
+Type name: __block:snow__
+
+This is a layered snow block. It does not support metadata subtypes. It has the following additional attributes:
+
+```json
+{
+  "snowball": "minecraft:snowball",
+  "maxLight": 15
+}
+```
+
+* __snowball__: If specified, this ItemStack will be dropped once for each layer plus one (1 layer drops 2, 2 layers drop 3).
+* __maxLight__: If the block's light level is above the provided value, the block will disappear. Setting this to 15 will make the block not disappear at all. Default value is 11.
+
+Block state properties: layers. It has values between 1 and 8, including both.
+
+# Crops
+Type name: __block:crops__
+
+This is a crops block like carrots or potatoes. It does not support metadata subtypes. It has the following additional attributes:
+
+```json
+{
+  "maxAge": 3,
+  "growthFactor": 1.5,
+  "heights": [0.1, 0.3, 0.6, 1.0],
+  "seeds": "cs4examplemod:seeds",
+  "crops": "minecraft:carrot"
+}
+```
+
+* __maxAge__: The maximum number of stages this block has. A maxAge of 0 means the block will only have one stage. The maximum value for this attribute is 15. Default value is 7.
+* __growthFactor__: This specifies how fast the crop will grow. A value of 1.0 is as fast as regular crops, 2.0 is twice as fast, 0.5 is half as fast. This value has to be greater than 0.0. Default value is 1.0.
+* __heights__: This specifies the heights for each stage of the crop. If omitted, the height of the crop will linearly increase to 1.0 depending on the maxAge. For example if the maxAge is 3 the calculated heights will be `[0.25, 0.5, 0.75, 1.0]`.
+* __seeds__: This is a BlockDrop defining the seeds that this block will drop. If the block is harvested at its maximum age it will drop multiple seeds just like regular crops.
+* __crops__: This is a BlockDrop defining the crops that will drop if the block is harvested at its maximum age.
+
+Block state properties: age. It has values between 0 and the value of maxAge, including both.
