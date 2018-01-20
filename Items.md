@@ -178,4 +178,28 @@ To correctly use the model that dynamically uses the fluid texture, put the foll
 
 You only need to modify the textures. The model has 3 layers: base, fluid and cover. Base is the background. Fluid is a white-only texture where the white part is replaced with the fluid texture. Cover is rendered on top of the base and fluid.
 
+# Shears
+Type name: __item:shears__
 
+This will create a shears item just like the vanilla one. It does not support metadata subtypes. It has one additional attribute:
+
+```json
+{
+	"durability" : 750
+}
+```
+
+* __durability__: This defines the number of uses before the shears breaks. If omitted, the vanilla shears durability (238) will be used.
+
+# Seeds
+Type name: __item:seeds__
+
+This will create an item that can place crops onto soil. It does not support metadata subtypes. It has one additional attribute:
+
+```json
+{
+	"plant" : {"block": "cs4examplemod:crops"}
+}
+```
+
+* __plant__: This is a BlockState defining the plant that is placed by the item.
