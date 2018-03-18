@@ -88,6 +88,40 @@ The following is a smelting recipe. Both _input_ and _result_ are item stacks:
   }
 }
 ```
+
+# BlockDrop
+A BlockDrop is almost identical to an ItemStack. There's two additions:
+You can set the amount to a range. In the following example, the actual amount that is dropped will be something between 1 and 3 including both.
+
+```json
+{
+  "amount" : [1, 3]
+}
+```
+
+You can also add a `fortuneAmount` property. This amount will be multiplied by the item's fortune level and then added to the regular amount.
+
+```json
+{
+  "fortuneAmount" : 2
+}
+```
+
+## Examples
+
+The following will always drop at least 2 dirt. If the item has a fortune level of, for example 2, it will drop an additional 2 or 4 blocks of dirt.
+```json
+{
+  "item": "minecraft:dirt",
+  "amount": 2,
+  "fortuneAmount": [1, 2]
+}
+```
+
+Just like an ItemStack, you can define a BlockDrop like this:
+```json
+"minecraft:stone@1"
+```
 	
 # RecipeInput
 A recipe input is either an ItemStack or a ore class.
