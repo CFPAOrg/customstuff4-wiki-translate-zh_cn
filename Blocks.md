@@ -90,7 +90,7 @@ Some attributes are used by all types of blocks:
 
 * __gui__: This is a ResourceLocation defining what gui is being opened when right-clicking the block. Use the id of the gui together with the mod id. Supports metadata subtypes. Default is no gui.
 
-* __drop__: This is either one or multiple ItemStack that, if defined, changes what the block drops when harvested. Use `minecraft:air ` to make it not drop anything. In addition to regular ItemStacks you can define a range for the amount like this `[1, 4]` which make the block drop randomly between 1 and 4 items. Supports metadata subtypes.
+* __drop__: This is either one or multiple BlockDrop. To make the block not drop anything use `minecraft:air`. If omitted, the block will just drop itself. Supports metadata subtypes.
 
 * __isFullCube__: Defines whether this block is a full cube. If false, connected sides of neighbouring blocks will be rendered. Supports metadata subtypes.
 
