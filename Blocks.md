@@ -42,7 +42,9 @@ Some attributes are used by all types of blocks:
 	"canPlaceOnSides": true,
 	"sustainedPlants": "Crop",
 	"burnTime": 100,
-	"slipperiness": 0.6
+	"slipperiness": 0.6,
+	"pathNodeType": "blocked",
+	"isWeb": true
 }
 ```
 
@@ -119,6 +121,10 @@ Some attributes are used by all types of blocks:
 * __burnTime__: Defines the number of ticks that the block provides fuel for a furnace. -1 lets the furnace decide on this, for example if the block's material is wood. Supports metadata subtypes. Default value is -1.
 
 * __slipperiness__: Defines how much velocity is maintained while moving on top of the block. Supports metadata subtypes. Default value is 0.6.
+
+* __pathNodeType__: Defines how mobs see the block when pathfinding. Valid values: blocked, open, walkable, trapdoor, fence, lava, water, rail, dangerFire, damageFire, dangerCactus, damageCactus, dangerOther, damageOther, doorOpen, doorWoodClosed, doorIronClosed. Omitting this will use the block's default. Supports metadata subtypes.
+
+* __isWeb__: If set to true, the block will make entities move very slowly while inside the block just like the regular web block. Supports metadata subtypes. Default value if false.
 
 # Metadata Subtypes
 Some block types support metadata subtypes. That means the block can have different models, names or other things depending on their metadata value.  
@@ -434,3 +440,103 @@ This is a crops block like carrots or potatoes. It does not support metadata sub
 * __crops__: This is a BlockDrop defining the crops that will drop if the block is harvested at its maximum age.
 
 Block state properties: age. It has values between 0 and the value of maxAge, including both.
+
+# Fence Gate
+Type name: __block:fenceGate__
+
+This is a fence gate block. It does not support metadata subtypes. It has the following addition attributes:
+
+```json
+{
+  "opensWithRedstone": true,
+  "openWithHands": true
+}
+```
+
+* __opensWithRedstone__: Specifies whether the fence gate can be opened or closed using redstone. Default value is true.
+* __opensWithHands__: Specifies whether the fence gate can be opened or closed using hands (right-clicking). Default value is true.
+
+Block state properties: facing (north, south, east, west), in_wall (true, false), open (true, false).
+
+# Wall
+Type name: __block:wall__
+
+This is a wall block. It supports all 16 metadata subtypes. It has no additional attributes.
+
+Block state properties: subtype (0 to 15), north (true, false), south (true, false), east (true, false), west (true, false), up (true, false)
+
+# Trap Door
+Type name: __block:trapDoor__
+
+This is a trap door block. It does not support metadata subtypes. It has the following addition attributes:
+
+```json
+{
+  "opensWithRedstone": true,
+  "openWithHands": true
+}
+```
+
+* __opensWithRedstone__: Specifies whether the trap door can be opened or closed using redstone. Default value is true.
+* __opensWithHands__: Specifies whether the trap door can be opened or closed using hands (right-clicking). Default value is true.
+
+Block state properties: facing (north, south, east, west), half (top, bottom), open (true, false)
+
+# Torch
+Type name: __block:torch__
+
+This is a torch block. It does not support metadata subtypes. It has the following addition attributes:
+
+```json
+{
+  "spawnParticles": true
+}
+```
+
+* __spawnParticles__: Specifies whether the torch should spawn flame and smoke particles. Default value is true.
+
+Block state properties: facing (up, north, south, east, west)
+
+# Button
+Type name: __block:button__
+
+This is a button block. It does not support metadata subtypes. It has the following addition attributes:
+
+```json
+{
+  "pressedTicks": 20,
+  "triggeredByArrows": false
+}
+```
+
+Block state properties: facing (up, north, south, east, west), powered (true, false)
+
+* __pressedTicks__: The number of ticks that the button remains in the pressed state. Default value is 20.
+* __triggeredByArrows__: Specifies whether the button can be pressed by arrows. Default value is false.
+
+# Pane
+Type name: __block:pane__
+
+This is a pane block (glass pane, iron bars, etc.). It supports all 16 metadata subtypes. It has no additional attributes.
+
+Block state properties: subtype (0 to 15), north (true, false), south (true, false), east (true, false), west (true, false)
+
+# Pressure Plate
+Type name: __block:pressurePlate__
+
+This is a pressure plate block. It does not support metadata subtypes. It has the following additional attributes.
+
+```json
+{
+  "pressedTicks": 20,
+  "selector": "everything",
+  "onSound": "block.wood_pressureplate.click_on",
+  "offSound": "block.wood_pressureplate.click_off"
+}
+```
+
+* __pressedTicks__: The number of ticks that the pressure plate remains in the pressed state. Default value is 20.
+* __selector__: This defines what entities can trigger the pressure plate. This is either the name of the entity (minecraft:sheep, minecraft:creeper) or one of the these: everything, nothing, livings, players, items. Default value is everything.
+* __onSound__, __offSound__: The name of the sound when the pressure plate is pressed or unpressed. Default values are block.wood_pressureplate.click_on and block.wood_pressureplate.click_off
+
+Block state properties: powered (true, false)
