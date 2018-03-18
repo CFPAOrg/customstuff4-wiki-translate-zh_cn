@@ -216,5 +216,5 @@ These item types allows you to create custom armor. They do not support metadata
 }
 ```
 
-* __material__: The armor's material. This defines the texture, durability, damage reduction, enchantability, toughness and equip sound. This is either leather, chain, iron, gold, diamond or the id of a custom armor material. Default value is leather.
+* __material__: The armor's material. This defines the texture, durability, damage reduction, enchantability, toughness and equip sound. This is either leather, chain, iron, gold, diamond or the id of a custom armor material (see [[Armor Materials]]). Default value is leather.
 * __armorTexture__: If specified, this will override the armor texture provided by material.
