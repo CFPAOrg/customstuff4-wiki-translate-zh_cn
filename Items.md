@@ -203,3 +203,18 @@ This will create an item that can place crops onto soil. It does not support met
 ```
 
 * __plant__: This is a BlockState defining the plant that is placed by the item.
+
+# Helmet, Chest, Legs, Boots
+Type names: __item:helmet__, __item:chest__, __item:legs__, __item:boots__
+
+These item types allows you to create custom armor. They do not support metadata subtypes. The following additional attributes are available:
+
+```json
+{
+	"material": "iron",
+	"armorTexture": "minecraft:textures/models/armor/gold_layer_1.png"
+}
+```
+
+* __material__: The armor's material. This defines the texture, durability, damage reduction, enchantability, toughness and equip sound. This is either leather, chain, iron, gold, diamond or the id of a custom armor material. Default value is leather.
+* __armorTexture__: If specified, this will override the armor texture provided by material.
