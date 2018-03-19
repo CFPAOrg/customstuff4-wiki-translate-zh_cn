@@ -3,13 +3,13 @@ Some attributes are used by all types of items:
 
 ```json
 {
-	"id" : "myitem",
-	"model" : "mymod:myitemmodel",
-	"creativeTab" : "tools",
-	"information" : ["First line", "Second line"],
-	"maxDamage": 9,
-	"tint": "red",
-	"burnTime": 100
+  "id" : "myitem",
+  "model" : "mymod:myitemmodel",
+  "creativeTab" : "tools",
+  "information" : ["First line", "Second line"],
+  "maxDamage": 9,
+  "tint": "red",
+  "burnTime": 100
 }
 ```
 
@@ -33,7 +33,7 @@ If an item type supports metadata subtypes, you can enable it by providing the _
 
 ```json
 {
-	"subtypes" : [ 0, 1, 5 ]
+  "subtypes" : [ 0, 1, 5 ]
 }
 ```
 This will make the item have subtypes for metadata values 0, 1 and 5. You should always have a 0 in their.
@@ -42,11 +42,11 @@ You can now define attribute values for each of those metadata values provided t
 
 ```json
 {
-	"model" : {
-		"0" : "mymod:myitem_0",
-		"1" : "mymod:myitem_1",
-		"5" : "mymod:myitem_5"
-	}
+  "model" : {
+    "0" : "mymod:myitem_0",
+    "1" : "mymod:myitem_1",
+    "5" : "mymod:myitem_5"
+  }
 }
 ```
 
@@ -54,7 +54,7 @@ You can still define the attribute like this:
 
 ```json
 {
-	"model" : "mymod:myitem"
+  "model" : "mymod:myitem"
 }
 ```
 
@@ -83,11 +83,47 @@ This item has no special functionality, like sticks or coal. It supports metadat
 
 ```json
 {
-	"maxStack" : 32
+  "maxStack" : 32,
+  "gui" : "mymod:mygui",
+  "modules": [
+    {
+      "type": "inventory",
+      "name": "inv1",
+      "size": 27
+    }
+  ]
 }
 ```
 
 * __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
+* __gui__: This is a ResourceLocation defining what gui is being opened when right-clicking with the item. Use the id of the gui together with the mod id. Supports metadata subtypes. Default is no gui.
+* __modules__: This is alist of item modules. These modules add functionality to the item.
+
+## Item Modules
+All modules have the following attributes:
+
+```json
+{
+  "type": "inventory",
+  "name": "inv1"
+}
+```
+
+* __type__: This is the type of the module. Depending on this, more attributes are available.
+* __name__: This is the name of the module. It has to be unique in the item only. This is used to reference the module, for example in a gui file.
+
+### Inventory
+Type name: __inventory__
+
+This module adds a simple inventory to the item. It has the following attributes:
+
+```json
+{
+  "size": 27
+}
+```
+
+* __size__: This defines how many slots the inventory has.
 
 # Axe, Pickaxe, Shovel, Sword
 Type name: __item:axe__, __item:pickaxe__, __item:shovel__, __item:sword__
@@ -96,10 +132,10 @@ These items act like their vanilla equivalents. They do not support metadata sub
 
 ```json
 {
-	"material" : "iron",
-	"damage" : 3.5,
-	"attackSpeed" : 4.7,
-	"durability" : 750
+  "material" : "iron",
+  "damage" : 3.5,
+  "attackSpeed" : 4.7,
+  "durability" : 750
 }
 ```
 
@@ -115,18 +151,18 @@ As the name suggests, this item type is for food. It supports metadata subtypes.
 
 ```json
 {
-	"maxStack" : 32,
-	"healAmount": 4,
-	"saturation" : 1.2,
-	"alwaysEdible": true,
-	"potionEffect" : {
-		"id" : "minecraft:speed",
-		"duration" : 120
-	},
-	"potionEffectProbability" : 0.5,
-	"isWolfFood" : false,
-	"result": "minecraft:glass_bottle",
-	"useAction": "eat"
+  "maxStack" : 32,
+  "healAmount": 4,
+  "saturation" : 1.2,
+  "alwaysEdible": true,
+  "potionEffect" : {
+    "id" : "minecraft:speed",
+    "duration" : 120
+  },
+  "potionEffectProbability" : 0.5,
+  "isWolfFood" : false,
+  "result": "minecraft:glass_bottle",
+  "useAction": "eat"
 }
 ```
 
@@ -147,7 +183,7 @@ This will create a container that can hold any fluid. It does not support metada
 
 ```json
 {
-	"capacity" : 1000
+  "capacity" : 1000
 }
 ```
 
@@ -185,7 +221,7 @@ This will create a shears item just like the vanilla one. It does not support me
 
 ```json
 {
-	"durability" : 750
+  "durability" : 750
 }
 ```
 
@@ -198,7 +234,7 @@ This will create an item that can place crops onto soil. It does not support met
 
 ```json
 {
-	"plant" : {"block": "cs4examplemod:crops"}
+  "plant" : {"block": "cs4examplemod:crops"}
 }
 ```
 
@@ -211,8 +247,8 @@ These item types allows you to create custom armor. They do not support metadata
 
 ```json
 {
-	"material": "iron",
-	"armorTexture": "minecraft:textures/models/armor/gold_layer_1.png"
+  "material": "iron",
+  "armorTexture": "minecraft:textures/models/armor/gold_layer_1.png"
 }
 ```
 
