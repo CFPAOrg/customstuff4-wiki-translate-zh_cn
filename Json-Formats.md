@@ -563,8 +563,7 @@ NBT Compound是个含有NBT数据的字符串:
     "offset": [0.1, 0.1, 0.1]
 }
 ```
-The values defined in the offset part are being added to both from and to.
-决定了碰撞箱的偏移量（offset）。
+决定了碰撞箱的偏移量（offset），偏移量会被加到from和to的坐标上。
 ```json
 {
     "cube": 0.8,
