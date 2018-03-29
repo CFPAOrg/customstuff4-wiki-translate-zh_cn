@@ -1,21 +1,17 @@
 To add content, you'll have to create a new file called _main.json_. This file contains everything that is being added to the game. However you can outsource anything to another file.
 Every json file consists of named lists, where each entry in these lists adds one or more things of the same type, for example shaped recipes.
 
-For a simple recipe the file might look like this:
+For a simple smelting recipe the file might look like this:
 
 ```json
 {
   "content": [
     {
-      "type": "shapedRecipe",
+      "type": "smeltingRecipe",
       "entries": [
         {
-          "shape": ["AA", "BX"],
-          "items": {
-            "A": "minecraft:coal",
-            "B": "minecraft:diamond"
-          },
-          "result": "minecraft:apple"
+          "input": "minecraft:stone",
+          "result": "minecraft:obsidian"
         }
       ]
     }
