@@ -1,3 +1,5 @@
+## Recipes for Vanilla Crafting Table
+
 In Minecraft 1.12 and up recipes for the vanilla crafting table are added with minecrafts own json files. Removal of recipes is currently disabled. To damage an item in a recipe you can use the __customstuff4:damageable_shaped__ and __customstuff4:damageable_shapeless__ recipe types like this: https://github.com/cubex2/customstuff4/tree/master/examplemod/assets/cs4examplemod/recipes
 
 # Shaped Recipes
