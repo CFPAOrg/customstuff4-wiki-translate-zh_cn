@@ -6,7 +6,7 @@ Type name: __shapedRecipe__
 
 ```json
 {
-  "shape": ["SS", "DX"],
+  "shape": ["SS", "D "],
   "items": {
     "S": "minecraft:sword_diamond@all",
     "D": "ore:blockDiamond"
