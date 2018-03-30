@@ -11,3 +11,21 @@ Type name: __creativeTab__
 * __icon__: This is an ItemStack and defines the item that is being used as the icon for the creative tab.
 
 The lang file entry for creative tabs is 'itemGroup.[id]'. In the example above it would be 'itemGroup.examplemod'.
+
+
+## Vanilla Creative Tabs
+
+The following vanilla creative tabs can be used for the `creativeTab` property of blocks and items:
+
+* brewing
+* buildingBlocks
+* combat
+* decorations
+* food
+* inventory
+* materials
+* misc
+* redstone
+* search
+* tools
+* transportation
