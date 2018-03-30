@@ -50,7 +50,7 @@ Some attributes are used by all types of blocks:
 
 * __id__: This is the unique id of the block. This is used to reference the block in recipes or in the lang file. This has to be all lowercase and must not contain spaces. It only has to be unique in your mod. If your mod id is _mymod_ and the item id is _myblock_, you reference the item with _mymod:block_. The block state files is then located in _assets/mymod/blockstates/myblock.json_. If the block has an item associated with it as most blocks do, that item has the same id.
 
-* __material__: This is the material of the block. The material defines different default properties for the block such as if it is translucent or if it requires a tool to mine. The default value is _ground_.
+* __material__: This is the material of the block. The material defines different default properties for the block such as if it is translucent or if it requires a tool to mine. The default value is _ground_. A list of available materials can be found [here](../Block-Materials).
 
 * __itemModel__: This defines the model file that is being used for the item of the block. In the example above the file is located in _assets/mymod/models/item/myitemmodel.json_ or _assets/mymod/blockstates/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes. Default value is "[modid:blockid]". 
 
@@ -175,35 +175,6 @@ tile.themodid.theblockid.0.name=Subtype 0
 tile.themodid.theblockid.1.name=Subtype 1
 tile.themodid.theblockid.5.name=Subtype 5
 ```
-
-# Materials
-The following materials can be used:
-
-* air
-* cactus
-* circuits
-* clay
-* cloth
-* craftedSnow
-* fire
-* glass
-* grass
-* ground
-* ice
-* iron
-* lava
-* leaves
-* plants
-* pumpkin
-* redstoneLight
-* rock
-* sand
-* snow
-* sponge
-* tnt
-* vine
-* water
-* wood
 
 # Sound Types
 The following sound types can be used.
