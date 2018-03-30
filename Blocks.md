@@ -54,7 +54,7 @@ Some attributes are used by all types of blocks:
 
 * __itemModel__: This defines the model file that is being used for the item of the block. In the example above the file is located in _assets/mymod/models/item/myitemmodel.json_ or _assets/mymod/blockstates/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes. Default value is "[modid:blockid]". 
 
-* __creativeTab__: This defines the creative tab that the item of the block appears in. Omit to make it not appear in any tab. Supports metadata subtypes.
+* __creativeTab__: This defines the creative tab that the item of the block appears in. Omit to make it not appear in any tab. Supports metadata subtypes. A list of available creative tabs can be found [here](../Creative-Tabs#vanilla-creative-tabs).
 
 * __hardness__: This defines how long it takes to break the block. Supports metadata subtypes. The default value is 1.0. 
 
