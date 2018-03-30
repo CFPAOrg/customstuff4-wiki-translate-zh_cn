@@ -60,7 +60,7 @@ Some attributes are used by all types of blocks:
 
 * __resistance__: This defines the resistance against explosions. Supports metadata subtypes. The default value is 0.0.
 
-* __soundType__: This defines the sound that is being played when the block is being walked on, breaked or placed. Supports metadata subtypes. The default value is stone.
+* __soundType__: This defines the sound that is being played when the block is being walked on, breaked or placed. Supports metadata subtypes. The default value is stone. A list of available sound types can be found [here](../Block-Sound-Types).
 
 * __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
 
@@ -175,22 +175,6 @@ tile.themodid.theblockid.0.name=Subtype 0
 tile.themodid.theblockid.1.name=Subtype 1
 tile.themodid.theblockid.5.name=Subtype 5
 ```
-
-# Sound Types
-The following sound types can be used.
-
-* anvil
-* cloth
-* glass
-* grass
-* gravel
-* ladder
-* metal
-* sand
-* slime
-* snow
-* stone
-* wood
 
 # Creative Tabs
 
