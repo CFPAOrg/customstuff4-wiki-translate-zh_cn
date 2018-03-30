@@ -176,21 +176,6 @@ tile.themodid.theblockid.1.name=Subtype 1
 tile.themodid.theblockid.5.name=Subtype 5
 ```
 
-# Creative Tabs
-
-* brewing
-* buildingBlocks
-* combat
-* decorations
-* food
-* inventory
-* materials
-* misc
-* redstone
-* search
-* tools
-* transportation
-
 # Block States
 The blockstate file defines what model the block uses depending on its state. For example the metadata subtype is a state. A simple blockstate file for a block using subtypes might look like this:
 
