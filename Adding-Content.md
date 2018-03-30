@@ -52,3 +52,7 @@ You can also add conditions to a content entry to only load that content if the 
 	
 This works for both _file_ and _entries_.  
 The content is only loaded if all conditions are met. In the example above, _chesttransporter_ has to be loaded and _morefurnaces_ must not.
+
+***
+More Tutorials:
+* [[Creation of Blocks]]
