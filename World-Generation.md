@@ -20,7 +20,7 @@ Type name: __worldGen:ore__
 
 * __block__: This is a ResourceLocation specifying that block that is being generated.
 
-* __meta__: This defines the metadata of the generated block.
+* __meta__: This defines the metadata of the generated block. Defaults to 0.
 
 * __target__: This is a ResourceLocation specifying what block is being replaced to generate the block. If omitted, stone is being replaced.
 
