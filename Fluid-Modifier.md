@@ -1,4 +1,4 @@
-Type name: __fluidModifier__
+类名: __fluidModifier__
 
 ```json
 {  
@@ -7,7 +7,7 @@ Type name: __fluidModifier__
 }
 ```
 
-* __block__: The id of (flowing) fluid block that is being modified.
-* __canCreateSource__: If true, two source blocks can now create another one. If false, two source blocks can no longer create another one.
+* __block__: 正在修改的(流动)流体方块的ID.
+* __canCreateSource__: 该属性定义两个以该流体作为水源的水源方块是否可以创建另一个水源方块, 这种特性类似于水(译者注: 就是无限水.).
 
 

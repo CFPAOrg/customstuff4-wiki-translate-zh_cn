@@ -1,5 +1,5 @@
-# All GUIs
-Some attributes are used by all types of GUIs:
+# 所有gui都遵循的共有法则
+所有类型的GUI都使用这些属性:
 
 ```json
 {
@@ -7,12 +7,12 @@ Some attributes are used by all types of GUIs:
 }
 ```
 
-* __id__: This is the unique id of the GUI. This is used to reference the GUI in blocks. This has to be all lowercase and must not contain spaces. It only has to be unique in your mod.
+* __id__: 这是GUI的**唯一**ID. 这用于使方块实例引用GUI. 该属性必须全部小写, 且不得包含空格. 该ID只需要在你的模组中的命名空间中保持唯一性.
 
-# Container
-Type name: __gui:container__
+# 容器
+类名: __gui:container__
 
-This gui can have inventory slots. The following attributes are available:
+GUI可以使用物品槽, 并可以使用以下属性:
 
 ```json
 {
@@ -99,11 +99,11 @@ This gui can have inventory slots. The following attributes are available:
 }
 ```
 
-* __width__: This defines the width of the GUI. Default value is 176.
-* __height__: This defines the width of the GUI. Default value is 166.
-* __bg__: This is a ResourceLocation defining the background texture for the gui. 
-* __bgTexX__, __bgTexY__: These define where in the background texture the actual background is. The rectangle that is being drawn is at (bgTexX, bgTexY) and its size is (width, height). Default values are 0.
-* __slots__: This is a list of inventory slots for the GUI. The order of this list is relevant for the shift-click rules.
+* __width__: 该属性定义了GUI的宽度. 默认值为 `176`.
+* __height__: 该属性定义了GUI的高度. 默认值为 `166`.
+* __bg__: 该属性定义了一个本地资源导引, 用于GUI的背景纹理.
+* __bgTexX__, __bgTexY__: 这些属性定义了背景材质中的实际背景的位置. 原点为背景材质左上方, 从(`bgTexX`, `bgTexY`)开始, 其大小为 `width * height` . 默认值都为 `0`.
+* __slots__: 该属性定义了GUI的物品槽列表. 列表的顺序取决于Shift-Click(快速分发)策略.
 	* __name__: This is the name of the inventory. For inventories in tile enties, this is the value used for the name attribute of the inventory module.
 	* __firstSlot__: This is the index of the first slot from the inventory that is being used. This is usefull if you want one inventory to split into multiple areas. The player inventory, for example, is split into the hotbar and the non-hotbar areas. The default value is 0.
 	* __rows__, __columns__: These define in how many rows and columns is separated in. They also define how many slots are added (rows * columns = totalSlots). Default values are 1.

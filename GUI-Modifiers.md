@@ -1,4 +1,4 @@
-Type name: __guiModifier__
+类名: __guiModifier__
 
 ```json
 {  
@@ -30,25 +30,25 @@ Type name: __guiModifier__
 }
 ```
 
-* __gui__: The name of the GUI that is being modified.
-* __labels__: This is a list of labels that are being added to the GUI.
-	* __alignX__: This defines the horizontal alignment of the label. It can be left, right or center. This is optional and defaults to left.
-	* __alignY__: This defines the vertical alignment of the label. It can be top, bottom or center. This is optional and defaults to top.
-	* __offsetX__: This defines the horizontal offset from the positioned specified with alignX. This can be an absolute value, a relative value or both. This is optional and defaults to 0.
-	* __offsetY__: This defines the horizontal offset from the positioned specified with alignY. This can be an absolute value, a relative value or both. This is optional and defaults to 0.
-	* __text__: This defines the text that is shown.
-	* __dropShadow__: This defines whether the text should be drawn with a drop shadow. This is optional and defaults to true.
-	* __color__: This is a Color defining the color of the text. The default value is "white".
-* __removeButtons__: This is a list of integers, where each integer specifies the id of a button that is being removed from the GUI.
-* __editButtons__: This is a list of buttons that are being modified. 
-	* __buttonId__: This defines the id of the button that is being modified.
-	* __alignX, alignY__: Same as for labels.
-	* __offsetX, offsetY__: Same as for labels. If these are omitted, the position of the button is not changed.
-	* __width__: The new width for the button. This can be an absolute value, a relative value or both. If omitted, the width is not changed.
-	* __height__: The new height for the button. This can be an absolute value, a relative value or both. If omitted, the height is not changed.
-	* __text__: The new text for the button. If omitted, the text is not changed.
+* __gui__: 原GUI的名称
+* __labels__: 添加到GUI的标签列表.
+	* __alignX__: 该属性定义了标签的水平对齐方式. 它可以是 `left`(向左), `right`(向右) 或 `center`(居中) . 这是可选项, 默认为 `left`(居左).
+	* __alignY__: 该属性定义了标签的垂直对齐方式. 它可以是 `top`(向上), `bottom`(向下) 或 `center`(居中). 这是可选项, 默认为 `top`(向上).
+	* __offsetX__: 该属性定义了使用 `alignX` 指定的位置的水平偏移量. 这可以是绝对值, 也可以是相对值, 两者皆可. 这是可选项, 默认为 `0`.
+	* __offsetY__: 该属性定义了使用 `alignY` 指定的位置的垂直偏移量. 可以是绝对值, 也可以是相对值, 两者皆可. 这是可选项, 默认为 `0`.
+	* __text__: 该属性定义了将会显示的文本。
+	* __dropShadow__: 该属性定义了是否应该使用投影渲染文本. 这是可选项, 默认为 `true`.
+	* __color__: 该属性定义了文本的颜色. 默认值为 `white`(白色).
+* __removeButtons__: 这是一个整数列表, 其中每个整数指定从GUI中删除的按钮的ID.
+* __editButtons__: 这是用于修改GUI中已存在的按钮的列表.
+	* __buttonId__: 于 `removeButtons` 中定义了的按钮ID
+	* __alignX, alignY__: 和标签的那个一样
+	* __offsetX, offsetY__: 和标签的那个一样, 但是如果省略该选项, 按钮的位置不会改变.
+	* __width__: 按钮的宽度(长度). 可以是绝对值, 也可以是相对值, 两者皆可. 如果省略, 按钮的宽度(长度)不会改变.
+	* __height__: 按钮的高度. 可以是绝对值, 也可以是相对值, 两者皆可. 如果省略, 按钮的高度不会改变.
+	* __text__: 显示在按钮内部的文本, 如果省略, 按钮内部显示的文本不会改变.
 
-# Available GUIs
+# 原版中可用的GUI
 * mainMenu
 * ingameMenu
 * options
@@ -57,9 +57,9 @@ Type name: __guiModifier__
 * downloadTerrain
 * gameOver
 
-## Examples
+## 示例
 
-The following will add a "Custom Stuff 4" label in the bottom-left corner, remove the "Open To LAN" button and move the "Return to Game" button to its place changing the text to "Close this GUI".
+以下条目所表示的GUI将在左下角添加 `Custom Stuff 4` 标签，删除 `Open To LAN` 按钮并将 `Return to Game` 按钮移动到其位置, 将文本更改为 `Close this GUI`.
 ```json
 {
 	"gui" : "ingameMenu",

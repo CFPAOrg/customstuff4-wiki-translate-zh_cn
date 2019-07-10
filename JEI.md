@@ -1,7 +1,7 @@
-# Machine and Crafting Recipes
-Type names: __jei:machineRecipe__, __jei:craftingRecipe__
+# 机械和合成配方
+类名: __jei:machineRecipe__, __jei:craftingRecipe__
 
-These two add support for a machine or crafting recipe list to JEI.
+这两个类为CS4添加了在JEI中对机器和合成配方列表的支持:
 
 ```json
 {
@@ -23,26 +23,26 @@ These two add support for a machine or crafting recipe list to JEI.
 }
 ```
 
-* __recipeList__: This is a ResourceLocation defining what list of recipes is being used.
+* __recipeList__: 用于展示合成的合成配方列表.
 
-* __gui__: This is a ResourceLocation defining the gui of the machine or crafting table.
+* __gui__: 用于展示机械或合成台GUI的内部资源项.
 
-* __tileEntity__: This is a ResourceLocation defining the tile entity of the machine or crafting table.
+* __tileEntity__: 用于展示机械或合成台的Tile Entity的内部资源项.
 
-* __bgX__, __bgY__, __bgWidth__, __bgHeight__: These define what part of the background texture from the gui is shown in the JEI gui. The area should at least contain all the important slots for the recipe.
+* __bgX__, __bgY__, __bgWidth__, __bgHeight__: 该属性定义了GUI中背景材质的哪一部分显示在JEI GUI中. 该部分应至少包含配方的所有重要的物品或流体槽.
 
-* __icon__: This is a ItemStack that defines what item is used as the icon.
+* __icon__: 该属性定义了用于作为图标的物品.
 
-* __title__: The title that is being used in the JEI gui.
+* __title__: 为JEI GUI使用的标题.
 
-* __recipeAreaX__, __recipeAreaY__, __recipeAreaWidth__, __recipeAreaHeight__: These define where in the gui you can click to open the JEI gui that shows the recipes.
+* __recipeAreaX__, __recipeAreaY__, __recipeAreaWidth__, __recipeAreaHeight__: 这些配置项定义了在GUI中你可以点击以打开显示配方的JEI GUI的部分的大小尺寸.
 
-* __transferButtonX__, __transferButtonY__: If the default position of the transfer button doesn't fit, use these to position the button. The values are relative to the machine/crafting gui background.
+* __transferButtonX__, __transferButtonY__: 若转移按钮(译者注: 即JEI中将物品转移到GUI内的按钮)的默认位置不太合适, 请使用这些配置项进行绝对定位.
 
-# Item Descriptions
+# 物品描述
 Type name: __jei:description__
 
-This will create a description page in the JEI gui.
+这会在JEI GUI中创建一个描述页.
 
 ```json
 {
@@ -51,6 +51,6 @@ This will create a description page in the JEI gui.
 }
 ```
 
-* __items__: This is a list of ItemStack defining what items to add the description to.
+* __items__: 这是以ItemStack为成员的列表, 定义了要添加描述的物品.
 
-* __desc__: This is a list of description keys where each entry will be on a new line. You can use \n inside an entry to create a new line.
+* __desc__: 这是一个描述列表, 内部使用的是本地化名称, 其中每个条目都在一个新行上. 你可以在条目中使用  `\n` 来创建新行.

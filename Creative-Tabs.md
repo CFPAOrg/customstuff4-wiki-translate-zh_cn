@@ -1,4 +1,4 @@
-Type name: __creativeTab__
+类名: __`creativeTab`__
 
 ```json
 {
@@ -7,15 +7,15 @@ Type name: __creativeTab__
 }
 ```
 	
-* __id__: This is the tab's id. In blocks and items this id has to be used for the creativeTab attribute. It has to be unique.
-* __icon__: This is an ItemStack and defines the item that is being used as the icon for the creative tab.
+* __id__: 这是这个标签页的ID. 在构建方块或物品中, 此ID用于定义creativeTab属性. 这必须是**唯一的**.
+* __icon__: 这是一个ItemStack, 用于展示创造模式标签页图标的物品.
 
-The lang file entry for creative tabs is 'itemGroup.[id]'. In the example above it would be 'itemGroup.examplemod'.
+在本地化文件中, 创造模式标签页的本地化名称是 `itemGroup.<id>` , 在上面的示例中, 这个标签页的本地化名称是 `itemGroup.examplemod`.
 
 
-## Vanilla Creative Tabs
+## 原版中的标签页
 
-The following vanilla creative tabs can be used for the `creativeTab` property of blocks and items:
+下面的是原版中的创造模式标签页的ID:
 
 * brewing
 * buildingBlocks

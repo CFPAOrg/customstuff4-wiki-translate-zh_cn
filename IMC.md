@@ -1,4 +1,4 @@
-InterModComms (IMC) are used to send messages to other mods. This can be used, for example, to access a feature of another mod.
+InterModComms(IMC)技术用于给其他的模组发送信息. 这可以用于——举个例子, 启用其他mod中的一项特色功能.
 
 Type name: __imc__
 
@@ -11,7 +11,15 @@ Type name: __imc__
 }
 ```
 	
-* __type__: This defines the type of the value. This is one of string, nbt, resource, itemstack or function. resource is a ResourceLocation, function uses a string for the value but is handled differently. What you have to use is defined by the mod that the message is being sent to.
-* __modId__: The id of the mod that the message is being sent to.
-* __key__: The key of the message.
-* __value__: The value of the message.
+* __type__: 
+  * 该属性用于决定 `value` 的类型. 该属性值可以是下面中的一个:
+  * * `string`(字符串)
+  * * `nbt`(NBT)
+  * * `resource`(资源)
+  * * `itemstack`(物品实例)
+  * * `function`(函数?)
+  * `resource` (资源)是一个 `ResourceLocation`(内部资源项)
+  * `function` 使用字符串作为值, 但对其的处理方式不同. 你发送的内容是由接收的mod所决定的.
+* __modId__: 接收信息的mod
+* __key__: 信息的键
+* __value__: 信息的值

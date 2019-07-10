@@ -1,4 +1,4 @@
-Type name: __toolTip__
+类名: __toolTip__
 
 ```json
 {  
@@ -9,14 +9,21 @@ Type name: __toolTip__
 }
 ```
 
-* __item__: This is an ItemStack specifying the item to add the tool tip to.
-* __text__: This is a list of strings, where each string is a line in the tool tip.
-* __clearExisting__: Specifies whether the existing tool tip should be cleared. You can use this to replace an existing tool tip with your own. This is optional and defaults to _false_.
-* __mode__: This defines when the tool tip is shown. There are 7 modes: all, ctrl, shift, alt, noctrl, noshift and noalt.
+* __item__: 该属性定义了该条工具提示条目所作用的物品.
+* __text__: 这是一个字符串列表, 其中每个字符串都是工具提示中的一行.
+* __clearExisting__: 指定是否应清除现有工具提示, 你可以使用该属性来替换现有的工具提示. 这是可选的，默认为 `false`.
+* __mode__: 该属性指示工具提示在何时显示. 共有7种模式: 
+  * `all`       (任何时候)
+  * `ctrl`      (按下Ctrl键的时候)
+  * `shift`     (按下Shift键的时候)
+  * `alt`       (按下Alt键的时候)
+  * `noctrl`    (没有按下Ctrl键的时候) 
+  * `noshift`   (没有按下Shift键的时候)
+  * `noalt`     (没有按下Alt键的时候).
 
-## Examples
+## 示例
 
-The following two tool tips cause coal to have a "Press Shift for more" tool tip. Note that the first one has its mode set to _noshift_ and not _all_. Otherwise the "Press SHIFT" line would still show up when pressing SHIFT.
+以下两个工具提示使煤可以显示 `Press SHIFT for more text`. 注意, 第一个工具提示的属性 `mode` 被设置为 `noshift` 而不是 `all`. 否则, 按下SHIFT键时仍会显示 `Press SHIFT for more text` .
 ```json
 {  
 	"item": "minecraft:coal",

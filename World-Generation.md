@@ -1,7 +1,7 @@
-# Ore
-This generator can be used for ore-like generation, like iron ore or clay.
+# 矿脉
+该生成器可用于类似矿脉的生成, 如铁矿石或粘土.
 
-Type name: __worldGen:ore__
+类名: __worldGen:ore__
 
 ```json
 {
@@ -18,22 +18,22 @@ Type name: __worldGen:ore__
 }
 ```
 
-* __block__: This is a ResourceLocation specifying that block that is being generated.
+* __block__: 该属性指定了一个ResourceLocation, 用于调用生成的方块.
 
-* __meta__: This defines the metadata of the generated block. Defaults to 0.
+* __meta__: 该属性定义了生成的方块的元数据. 默认为 `0`.
 
-* __target__: This is a ResourceLocation specifying what block is being replaced to generate the block. If omitted, stone is being replaced.
+* __target__: 该属性指定了一种自然生成方块作为生成源, 矿脉将生成在该生成结构内. 默认值为 `minecraft:stone`.
 
-* __targetMeta__: This defines the metadata of the target block. Omit, to replace all metadata values.
+* __targetMeta__: `target` 的方块实例的元数据. 默认为 `0`.
 
-* __count__: This defines the number of generations per chunk. Defaults to 1.
+* __count__: 该属性定义了每个区块会尝试生成该矿脉的数量的多少. 默认为 `1`.
 
-* __size__: The number of blocks in each generation. Defaults to 10.
+* __size__: 该属性定义了在每个生成实例里生成的 `block` 的多少. 默认为 `10`. 注意, 实际情况可能会与这个属性值有所出入.
 
-* __minHeight__: The minimum height that the block is generated in. Defaults to 0.
+* __minHeight__: 该矿脉的最小生成层数. 默认为 `0`.
 
-* __maxHeight__: The maximum height that the block is generated in. Defaults to 64.
+* __maxHeight__: 该矿脉的最大生成层数. 默认为 `64`.
 
-* __dimension__: The dimension id in which that block is being generated. Defaults to 0 (overworld).
+* __dimension__: 该矿脉会在哪个世界生成, 默认为 `0`(overworld, 即主世界)
 
-* __weight__: The bigger this value, the later the generator runs in the world generation process, which means other generators run before this one.
+* __weight__: 该值越大, 生成器在世界生成的过程中运行的越晚, 这意味着其他生成器在此之前运行.(译者注: 该值是表示生成的占比, 占比越大, 生成的越多)

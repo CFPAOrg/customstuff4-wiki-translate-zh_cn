@@ -1,5 +1,5 @@
-# All Items
-Some attributes are used by all types of items:
+# 物品
+所有类型的物品都使用这些属性:
 
 ```json
 {
@@ -13,32 +13,33 @@ Some attributes are used by all types of items:
 }
 ```
 
-* __id__: This is the unique id of the item. This is used to reference the item in recipes or in the lang file. This has to be all lowercase and must not contain spaces. It only has to be unique in your mod. If your mod id is _mymod_ and the item id is _myitem_, you reference the item with _mymod:myitem_.
+* __id__: 该属性定义该方块的**唯一**ID. ID用于在配方中引用方块和于lang文件中进行国际化操作. ID必须全部小写, 且不得包含空格. ID只需要在你的模组中的命名空间中保持唯一性. 如果你的ModID是 `mymod` 且该物品的ID是 `myitem`, 你可以使用 `mymod:myitem` 引用该物品.
 
-* __model__: This defines the model file that is being used. In the example above the file can be  located in _assets/mymod/models/item/myitemmodel.json_ or _assets/mymod/blockstates/myitemmodel.json_. You can also use the model of another mod or minecraft itself. Supports metadata subtypes. Default value is "[modid]:[itemid]".
+* __model__: 该属性定义了物品使用的模型文件. 在上面的示例中, 这个文件在路径 `assets/mymod/models/item/myitemmodel.json` 或路径 `assets/mymod/blockstates/myitemmodel.json` 下.你也可以使用来自另一个模组或Minecraft本身的模型. 支持子类型. 默认值为 `<modid>:<itemid>`.
 
-* __creativeTab__: This defines the creative tab that the item appears in. Omit to make it not appear in any tab. Supports metadata subtypes.
+* __creativeTab__: 该属性定义了该物品将会被添加到的创造模式标签页. 如果省略填写该属性, 则该物品不会出现在任何创造模式标签页内. 支持子类型. 你能在[这里](Creative-Tabs#vanilla-creative-tabs)找到一个Minecraft原版中已定义的所有可用创造模式标签页的列表.
 
-* __information__: This defines additional lines of information below the name of the item in the inventory. Supports metadata subtypes.
+* __information__: 该属性定义了在背包中物品名称下方的其他信息行. 支持子类型.
 
-* __maxDamage__: This defines if the item is damageable and by what amount it can be damaged. If using this, you can't use metadata subtypes for this item.
+* __maxDamage__: 该属性定义了物品是否可以具有耐久值以及物品的最大耐久值. 如果使用此属性, 则无法为此物品使用子类型.
 
-* __tint__: Adds a tint to the item. This is a color. Supports metadata subtypes.
+* __tint__: 该属性将为物品添加色调. 应填入一种颜色. 支持子类型.
 
-* __burnTime__: Defines the number of ticks that the item provides fuel for a furnace. -1 lets the furnace decide on this. Supports metadata subtypes. Default value is -1.
+* __burnTime__: 该属性定义了物品能让熔炉燃烧的时间长短(单位:Tick). 若将值设为 `-1` , 则会让熔炉系统自己决定. 支持子类型. 默认值为 `-1` .
 
-# Metadata Subtypes
-Some item types support metadata subtypes. That means the item can have different models, names or other things depending on their metadata value. For example dye is an example for this: each color is a metadata subtype of the same item.
-If an item type supports metadata subtypes, you can enable it by providing the _subtypes_ attribute:
+# 子类型(Metadata Subtype)
+有些物品类型支持子类型. 这意味着物品可以根据其 `元数据值`(Metadata) 具有不同的模型, 名称或其他内容. 举个例子, 染色就是一个例子: 每种颜色都是同一物品的子类型.  
+如果一个物品类型支持子类型, 可以通过为物品条目填写 `subtypes` 属性来启用该特性:
 
 ```json
 {
   "subtypes" : [ 0, 1, 5 ]
 }
 ```
-This will make the item have subtypes for metadata values 0, 1 and 5. You should always have a 0 in their.
 
-You can now define attribute values for each of those metadata values provided that the attribute is supporting it:
+这将使物品条目具有元数据值分别为 `0` , `1` 和 `5` 的子类型. 你应该保留一个 `0` , 这表示了该方块的父类. 根据物品的类型, 最多可以使用16种子类型( `0` 到 `15` ).
+
+你现在可以为每个支持该特性的属性提供一个HashMap, 使各个子类的属性都不相同, 前提是该属性支持它:
 
 ```json
 {
@@ -50,7 +51,7 @@ You can now define attribute values for each of those metadata values provided t
 }
 ```
 
-You can still define the attribute like this:
+你仍然可以像这样定义属性:
 
 ```json
 {
@@ -58,28 +59,29 @@ You can still define the attribute like this:
 }
 ```
 
-This will set the value for all subtypes.
+这将为所有子类型设置**相同**的值.
 
-# Lang File
-The lang files are located in _assets/themodid/lang_.
+# 语言文件(Lang File)
+语言文件通常位于 `assets/themodid/lang` 路径下.
 
-The lang file entry for an item without subtypes looks like this:
-
-```
-item.themodid.theitemid.name=The Localized Name
-```
-
-And for an item with subtypes:
+没有子类型的方块的Lang文件条目如下所示:
 
 ```
-item.themodid.theitemid.0.name=Subtype 0
-item.themodid.theitemid.1.name=Subtype 1
-item.themodid.theitemid.5.name=Subtype 5
+tile.themodid.theitemid.name=The Localized Name
 ```
-# Simple
-Type name: __item:simple__
 
-This item has no special functionality, like sticks or coal. It supports metadata subtypes.
+如果方块具有多个子类型:
+
+```
+tile.themodid.theitemid.0.name=Subtype 0
+tile.themodid.theitemid.1.name=Subtype 1
+tile.themodid.theitemid.5.name=Subtype 5
+```
+
+# 简单(Simple)
+类名: __item:simple__
+
+这样的物品没有任何特殊的作用, 就像木棍或者煤. 支持子类型.
 
 ```json
 {
@@ -95,12 +97,12 @@ This item has no special functionality, like sticks or coal. It supports metadat
 }
 ```
 
-* __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
-* __gui__: This is a ResourceLocation defining what gui is being opened when right-clicking with the item. Use the id of the gui together with the mod id. Supports metadata subtypes. Default is no gui.
-* __modules__: This is alist of item modules. These modules add functionality to the item.
+* __maxStack__: 该属性定义了该物品的最大堆叠数. 该属性必须是在数字 `1` 和 `64` 之间的数. 支持子类型. 默认值为 `64`.
+* __gui__: 该内部资源项(ResourceLocation)用于定义当玩家右键使用该物品时呈现的GUI的内部资源项. 请配合 `GUI ID` 和modid使用. 支持子类型. 默认没有GUI(省略).
+* __modules__: 这是一个物品模块的列表. 这些模块可以为物品添加特殊的功能.
 
-## Item Modules
-All modules have the following attributes:
+## 物品模块
+所有模块都具有这些属性:
 
 ```json
 {
@@ -109,13 +111,13 @@ All modules have the following attributes:
 }
 ```
 
-* __type__: This is the type of the module. Depending on this, more attributes are available.
-* __name__: This is the name of the module. It has to be unique in the item only. This is used to reference the module, for example in a gui file.
+* __type__: 模块的类型. 根据模块的类型, 特殊的属性将会被添加到物品上.
+* __name__: 模块的名称. 在同一物品的模块列表的命名空间里唯一就行. 这用于外部调用模块, 例如在gui中引用该模块条目.
 
-### Inventory
-Type name: __inventory__
+### 物品槽
+类名: __inventory__
 
-This module adds a simple inventory to the item. It has the following attributes:
+该模块将简单的物品槽加入到物品当中. 其具有以下附加参数:
 
 ```json
 {
@@ -123,12 +125,12 @@ This module adds a simple inventory to the item. It has the following attributes
 }
 ```
 
-* __size__: This defines how many slots the inventory has.
+* __size__: 物品槽槽数的多少
 
-# Axe, Pickaxe, Shovel, Sword
-Type name: __item:axe__, __item:pickaxe__, __item:shovel__, __item:sword__
+# 斧, 镐, 铲, 剑
+类名: __item:axe__, __item:pickaxe__, __item:shovel__, __item:sword__
 
-These items act like their vanilla equivalents. They do not support metadata subtypes. All of them has the same set of attributes.
+这些物品就像原版中的四幻神一样. 这些模块不支持子类型. 他们都有这些相同的附加参数.
 
 ```json
 {
@@ -139,15 +141,15 @@ These items act like their vanilla equivalents. They do not support metadata sub
 }
 ```
 
-* __material__: This defines the material of the tool, which is responsible for mining speed, durability, damage and attack speed. Minecraft materials are wood, stone, iron, diamond and gold.
-* __damage__: This defines the damage against entities. If omitted, the materials damage will be used.
-* __attackSpeed__: This defines the attack speed. If omitted, the materials attack speed will be used.
-* __durability__: This defines the number of uses before the tool breaks. If omitted, the materials durability will be used.
+* __material__: 该属性决定了工具的材料, 材料决定了工具的采矿速度, 耐久, 伤害和攻击速度. 原版中可以使用的材料有: `wood`(木), `stone`(石), `iron`(铁), `diamond`(钻石), `gold`(金).
+* __damage__: 该属性决定了工具能对实体造成的伤害. 如果省略该属性, 则会使用材料所设定的伤害.
+* __attackSpeed__: 该属性决定了工具的攻击速度. 如果省略该属性, 则会使用材料所设定的攻击速度.
+* __durability__: 该属性决定了工具的耐久值. 如果省略该属性, 则会使用材料所设定的耐久值.
 
-# Food
-Type name: __item:food__
+# 食物
+类名: __item:food__
 
-As the name suggests, this item type is for food. It supports metadata subtypes.
+"物"如其名, 此类物品用于填满你的饱食度. It 支持子类型.
 
 ```json
 {
@@ -166,20 +168,20 @@ As the name suggests, this item type is for food. It supports metadata subtypes.
 }
 ```
 
-* __maxStack__: This defines the maximum number of items in one stack. This has to be between 1 and 64. Supports metadata subtypes. The default value is 64.
-* __healAmount__: The amount the item heals the player. Supports metadata subtypes. The default value is 2.
-* __saturation__: The amount of saturation that this food provides. The default value is 0.6. Supports metadata subtypes.
-* __alwaysEdible__: This defines whether the food can be eaten even if the player has a filled food bar. The default value is false. Supports metadata subtypes.
-* __potionEffect__: This is a PotionEffect that defines what effect is being added to the player. Omit if no effect should be added. Supports metadata subtypes.
-* __potionEffectProbability__: This defines the probability that the potion effect is being added to the player. 0.5 means a 50% chance, 1.0 means it is being added everytime. The default value is 1.0. Supports metadata subtypes.
-* __isWolfFood__: This defines whether wolves like this food. The default value is false.
-* __result__: This is a ItemStack that, if defined, sets the item that is returned to the inventory when the food has been eaten. Supports metadata subtypes.
-* __useAction__: This is either eat or drink and defines whether the player eats or drinks this food. Supports metadata subtypes.
+* __maxStack__: 该属性定义了该物品的最大堆叠数. 该属性必须是在数字 `1` 和 `64` 之间的数. 支持子类型. 默认值为 `64`.
+* __healAmount__: 该属性定义了该物品能够为玩家所提供的饱食度的多少. 支持子类型. 默认值为 `2`.
+* __saturation__: 该属性定义了该物品能够为玩家所提供的饱和度的多少. 默认值为 `0.6`. 支持子类型.
+* __alwaysEdible__: 该属性定义了当玩家的饱食度饱和时还是否能够以该物品为食物吃下. 默认值为 `false`. 支持子类型.
+* __potionEffect__: 该属性定义了当玩家吃下该物品时给与玩家的药水效果. 省略则不会有任何药水效果会被给与玩家. 支持子类型.
+* __potionEffectProbability__: 该属性定义了当玩家吃下该物品时给与玩家药水效果的概率. `0.5` 表示50%会给与, `1.0` 则是一定会. 默认值为 `1.0`. 支持子类型.
+* __isWolfFood__: 该属性定义了是否能将该物品作为食物饲喂给狼. 默认值为 `false`.
+* __result__: 该属性值应是一ItemStack(使用唯一id调用), 如果定义该值, 则会使玩家吃下该食物时返还给玩家该属性值所表示的物品. 支持子类型.
+* __useAction__: 该属性值定义了玩家是否使用喝而不是吃的方式食用该物品. 支持子类型.
 
-# Fluid Container
-Type name: __item:fluidContainer__
+# 流体容器
+类名: __item:fluidContainer__
 
-This will create a container that can hold any fluid. It does not support metadata subtypes. It has one additional attribute:
+这将创建一可以容纳所有流体的流体容器物品. 其不支持子类型. 具有一个附加属性:
 
 ```json
 {
@@ -187,9 +189,9 @@ This will create a container that can hold any fluid. It does not support metada
 }
 ```
 
-* __capacity__: The capacity of the container. Default value is 1000.
+* __capacity__: 所定义流体容器的容量. 默认值为 `1000`.
 
-To correctly use the model that dynamically uses the fluid texture, put the following model file to the blockstates folder:
+要让使用动态的流体材质的模型正确显示, 请将以下模型文件内容放入方块模型文件内:
 
 ```json
 {
@@ -212,12 +214,12 @@ To correctly use the model that dynamically uses the fluid texture, put the foll
 }
 ```
 
-You only need to modify the textures. The model has 3 layers: base, fluid and cover. Base is the background. Fluid is a white-only texture where the white part is replaced with the fluid texture. Cover is rendered on top of the base and fluid.
+你只需要修改材质。 这个模型有3个图层: `base`, `fluid`, `cover`. `base` 是材质的背景. `fluid` 是只由白色构成的材质, 其中白色部分被盛装的流体材质替换. `cover` 是覆盖在 `base` 和 `fluid` 上的材质.
 
-# Shears
-Type name: __item:shears__
+# 剪刀
+类名: __item:shears__
 
-This will create a shears item just like the vanilla one. It does not support metadata subtypes. It has one additional attribute:
+该物品类会创建一个像原版剪刀一样的物品. 该物品类不支持子类型. 其具有一个附加参数:
 
 ```json
 {
@@ -225,12 +227,12 @@ This will create a shears item just like the vanilla one. It does not support me
 }
 ```
 
-* __durability__: This defines the number of uses before the shears breaks. If omitted, the vanilla shears durability (238) will be used.
+* __durability__: 剪刀的耐久, 默认值为 `238` (即原版剪刀的耐久).
 
-# Seeds
-Type name: __item:seeds__
+# 种子
+类名: __item:seeds__
 
-This will create an item that can place crops onto soil. It does not support metadata subtypes. It has one additional attribute:
+这将创建一个可以将作物放在土壤上的物品. 该物品类不支持子类型. 其具有一个附加参数:
 
 ```json
 {
@@ -238,12 +240,12 @@ This will create an item that can place crops onto soil. It does not support met
 }
 ```
 
-* __plant__: This is a BlockState defining the plant that is placed by the item.
+* __plant__: 这是一个 `BlockStats`(方块状态), 用于指定种子的作物的方块形态.
 
-# Helmet, Chest, Legs, Boots
-Type names: __item:helmet__, __item:chest__, __item:legs__, __item:boots__
+# 头盔, 胸甲, 护膝, 靴子
+类名: __item:helmet__, __item:chest__, __item:legs__, __item:boots__
 
-These item types allows you to create custom armor. They do not support metadata subtypes. The following additional attributes are available:
+该物品类允许你创建自定义装甲. 该物品类不支持子类型, 且具有两个附加参数:
 
 ```json
 {
@@ -252,5 +254,5 @@ These item types allows you to create custom armor. They do not support metadata
 }
 ```
 
-* __material__: The armor's material. This defines the texture, durability, damage reduction, enchantability, toughness and equip sound. This is either leather, chain, iron, gold, diamond or the id of a custom armor material (see [[Armor Materials]]). Default value is leather.
-* __armorTexture__: If specified, this will override the armor texture provided by material.
+* __material__: 该属性定义装甲的材料, 材料定义了材质, 耐久, 减伤系数, 可附魔性, 韧性和装备声音. 该项可以填入 `leather`, `chain`, `iron`, `gold`, `diamond` 或是自定义的装甲材料(see [[Armor Materials]]). 默认值为 `leather`.
+* __armorTexture__: 如果指定该属性, 则使用该属性覆盖材料提供的装甲材质.

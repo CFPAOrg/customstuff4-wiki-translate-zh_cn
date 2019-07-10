@@ -1,6 +1,6 @@
-Welcome to the customstuff4 wiki!
+欢迎来到CustomStuff 4的Wiki!
 
-New to Custom Stuff 4? Follow these introduction tutorials:
+还没有接触过 Custom Stuff 4? 跳转到下列页面了解了解:
 * [[Getting Started]]
 * [[Adding Content]]
 * [[Creation of Blocks]]
@@ -36,11 +36,11 @@ Overview:
    
 ***
 
-An example mod can be found here: https://github.com/cubex2/customstuff4/tree/master/examplemod
+你可以在[这里](https://github.com/cubex2/customstuff4/tree/master/examplemod)找到一个示例用Mod
 
 ***
 
-Updating your mod to 1.12:
-Delete the cs4mod folder of your mod and let cs4 recreate it. 
+更新到 1.12:
+删除cs4mod文件夹, 让CS4重新生成. 
 
-Breaking change in 0.5.0: The output format for machine recipes changed. See [[Machine Recipes and Fuel]] on how it works now.
+[**破坏性更新**]0.5.0:机器的输出格式变了, 参见 [[Machine Recipes and Fuel]]

@@ -1,9 +1,9 @@
 This is a list of how to specify certain things in json. 
 
-# ResourceLocation
-A ResourceLocation is used to define the location of textures, models, or for item or block identifiers. There are two ways to define an ResourceLocation.
+# 内部资源项(ResourceLocation)
+一个内部资源项将用于调用内部的材质, 模型, 抑或是物品, 方块的唯一标识. 有两种方法可以定义一个内部资源项.
 
-Short version:
+书写较为方便的版本:
 
 ```json
 "minecraft:stone"
@@ -11,7 +11,7 @@ Short version:
 "minecraft:textures/gui/bars.png"
 ```
 	
-Long version:
+书写完整, 容易阅读的版本:
 
 ```json
 {
@@ -25,15 +25,15 @@ Long version:
 }
 ```
 
-# NBTTagCompound
-A NBTTagCompound is defined as a string containg the nbt data:
+# NBT标签项(NBTTagCompound)
+一个NBT标签项就像字符串一样, 用于表示游戏中一些隐藏的数据:
 
 ```json
 "{display:{Name:\"Some Obsidian\"}}"
 ```
 	
-# ItemStack
-There a multiple ways of specifying an item stack:
+# 物品堆(ItemStack)
+可使用多行的方式完整地表示一个物品堆:
 
 ```json
 {
@@ -43,9 +43,9 @@ There a multiple ways of specifying an item stack:
   "nbt" : "{display:{Name:\"Some Obsidian\"}}"
 }
 ```
-	
-Everything but _item_ is optional. _metadata_ defaults to 0, _amount_ to 1.  
-For some recipes you may want to allow all metadata variants. This can be done like this:
+
+除 `item` 外, 其他所有内容都是可选的, `metadata` 默认为 `0` , 而用于表示数量的 `amount` 默认为 `1`.
+对于某些配方, 你可能希望可以使用所有的子类型:
 
 ```json
 {
@@ -55,15 +55,15 @@ For some recipes you may want to allow all metadata variants. This can be done l
 }
 ```
 
-Or like this:
+或者这样做:
 ```json
 {
   "item": "minecraft:stone@all",
   "amount": 42
 }
 ```
-	
-There is also a short version of defining an item stack. However that way you can only define the item and metadata:
+
+还有一个定义物品堆的简短版本, 但是只能定义物品和元数据:
 
 ```json
 "minecraft:stone"
@@ -73,10 +73,10 @@ There is also a short version of defining an item stack. However that way you ca
 "minecraft:stone@all"
 ```
 	
-This will define an stack with an amount of 1. Omitting the metadata part will default in a metadata of 0.
+这将定义一个数量为1的物品堆. 当 `metadata` 被省略时, 其值被设置为作为缺省值的 `0` .
 
-## Examples
-The following is a smelting recipe. Both _input_ and _result_ are item stacks:
+## 示例
+这是一个无序合成. `input` 和 `result` 都是物品堆:
 
 ```json
 {
@@ -89,9 +89,9 @@ The following is a smelting recipe. Both _input_ and _result_ are item stacks:
 }
 ```
 
-# BlockDrop
-A BlockDrop is almost identical to an ItemStack. There's two additions:
-You can set the amount to a range. In the following example, the actual amount that is dropped will be something between 1 and 3 including both.
+# 方块掉落
+BlockDrop几乎与ItemStack相同. 但有两处不同:
+你可以将 `amount` 设置为一个区间. 在以下示例中, 物品掉落的实际数量将为 `1个到3个` .
 
 ```json
 {
@@ -99,7 +99,7 @@ You can set the amount to a range. In the following example, the actual amount t
 }
 ```
 
-You can also add a `fortuneAmount` property. This amount will be multiplied by the item's fortune level and then added to the regular amount.
+你也可以添加一个 `fortuneAmount`(时运采掘系数) 属性. 该属性值将在被附有时运附魔的工具采掘时, 掉落 `${fortuneAmount * <时运附魔等级>}` 个物品.
 
 ```json
 {
@@ -107,9 +107,9 @@ You can also add a `fortuneAmount` property. This amount will be multiplied by t
 }
 ```
 
-## Examples
+## 示例
 
-The following will always drop at least 2 dirt. If the item has a fortune level of, for example 2, it will drop an additional 2 or 4 blocks of dirt.
+.这个例子中, 该方块掉落将会掉落至少2个泥土. 如果被附有时运附魔的工具采掘下, 比如说当时运等级为2时, 它将会额外掉落2-4个泥土.
 ```json
 {
   "item": "minecraft:dirt",
@@ -118,23 +118,23 @@ The following will always drop at least 2 dirt. If the item has a fortune level 
 }
 ```
 
-Just like an ItemStack, you can define a BlockDrop like this:
+跟一个物品堆一样, 你也可以这样定义一个方块掉落:
 ```json
 "minecraft:stone@1"
 ```
 	
-# RecipeInput
-A recipe input is either an ItemStack or a ore class.
-An ore class is defined like this:
+# 配方输入
+一个配方输入支持使用物品堆和矿典.
+一个矿典可以这样声明:
 
 ```json
 "oreclass:stickWood"
 ```
 	
-An ItemStack is defined as usual.
+就像物品堆一样, 和之前一样.
 
-## Examples
-The following is the input part of a shapeless recipe, _items_ is a list of RecipeInput:
+## 示例
+下面是一个无序合成配方的配方输入部分, `items` 这个列表就是一个配方输入的列表:
 
 ```json
 {
@@ -149,8 +149,8 @@ The following is the input part of a shapeless recipe, _items_ is a list of Reci
 }
 ```
 
-# PotionEffect
-A potion effect defines the effect itself and the duration and amplifier.
+# 药水效果
+药水效果定义了效果本身以及持续时间和效果的倍率.
 
 ```json
 {
@@ -161,13 +161,15 @@ A potion effect defines the effect itself and the duration and amplifier.
 }
 ```
 
-* __id__: This is a ResourceLocation defining what effect is being used.
-* __duration__: The duration of the effect in ticks. The default value is 60 (3 seconds).
-* __amplifier__: An amplifier for the effect. This increases the effect. The default value is 1.
-* __showParticles__: Whether to show the effect particles. The default value is true.
+* __id__: 这是一个内部资源项, 用于定义正在使用的效果.
+* __duration__: 药水效果持续的时间, 默认值为 `60`(3秒).
+* __amplifier__: 药水效果的倍率. 使效果变得更加明显. 默认值为 `1`.
+* __showParticles__: 是否发出效果粒子. 默认值为 `true`.
 
-# BlockState
-A block state defines a block and its properties.
+# 方块状态
+方块状态定义方块及其属性.
+
+下面两种表现方式等效.
 
 ```json
 {
@@ -185,11 +187,11 @@ A block state defines a block and its properties.
 }
 ```
 
-* __block__: This is a ResourceLocation defining the block.
-* __properties__: This defines the properties and is optional.
+* __block__: 这是一个内部资源项, 用于定义方块.
+* __properties__: 可选, 用于定义属性.
 
-# Color
-There are two ways to define a color: using a hex code and using the name of the color.
+# 颜色
+可以用两种方式定义一种颜色: 1.使用16进制码 2.使用颜色名称.
 
 ```json
 "ff0000"
@@ -197,27 +199,29 @@ There are two ways to define a color: using a hex code and using the name of the
 "red"
 ```
 
-The following color names are available: black, white, red, lime, blue, yellow, aqua, magenta, silver, gray, maroon, olive, green, purple, teal, navy, foliagePine, foliageBirch, foliageBasic
+以下是所有可用的颜色名称: black, white, red, lime, blue, yellow, aqua, magenta, silver, gray, maroon, olive, green, purple, teal, navy, foliagePine, foliageBirch, foliageBasic
 
-# ItemFilter
-An ItemFilter is used to filter item stacks, for example for shift-click rules in container GUIs.
+# 物品过滤器(ItemFilter)
+物品过滤器用于过滤物品堆, 举个例子, GUI的Shift-Click(快速分发)策略就可以使用该技术过滤物品.
 
-There are multiple ways to specify a filter:
+构建物品过滤器有两种方法:
 
 ```json
 "machineInput:recipe_list"
 ```
-This one accepts all stacks that are a part of the input of a machine recipe from the `recipe_list` list.
+
+这个物品过滤器接受来自 `recipe_list` 这个配方列表的机器配方输入的所有物品堆.
 
 ```json
 "machineFuel:fuel_list"
 ```
-This one accepts all stacks that are a part of the fuel for a machine from the `fuel_list` list.
+
+这个物品过滤器接受来自 `fuel_list` 这个燃料列表所配置的所有燃料.
 
 ```json
 "ore:stickWood"
 ```
-This one accepts all stacks that are registered for the `stickWood` ore class.
+这个物品过滤器接受来自矿物词典 `stickWood` 的所有已注册的物品.
 
 ```json
 {
@@ -227,15 +231,17 @@ This one accepts all stacks that are registered for the `stickWood` ore class.
 
 "minecraft:dye@5"
 ```
-Both accept only the dye with metadata 5.
+
+这两者等价, 都接受元数据值为 `5` 的物品 `minecraft:dye`.
 
 ```json
 ["ore:stickWood", "minecraft:apple"]
 ```
-This one accepts all stacks that are in the `stickWood` ore class or is an apple.
 
-# FluidStack
-A FluidStack defines a fluid and an amount of that fluid. If no amount is specified 1000 is used.
+这个物品过滤器不仅接受来自矿物词典 `stickWood` 的所有已注册的物品, 还接受物品 `minecraft:apple`.
+
+# 流体堆
+A FluidStack defines a fluid and an amount of that fluid. If no amount is specified 1000 is used.一个流体堆明确了流体类型和数量. 数量可以省略, 默认为 `1000` .
 
 ```json
 "water"
@@ -244,14 +250,14 @@ A FluidStack defines a fluid and an amount of that fluid. If no amount is specif
 ```json
 "water@500"
 ```
-Uses 500 for the amount.
+将数字 `500` 作为该流体堆的数量.
 
 ```json
 {
     "fluid": "water@500"
 }
 ```
-Uses 500 for the amount.
+将数字 `500` 作为该流体堆的数量.
 
 ```json
 {
@@ -259,9 +265,9 @@ Uses 500 for the amount.
     "amount": 200
 }
 ```
-Uses 200 for the amount.
+将数字 `200` 作为该流体堆的数量.
 
-# BoundingBox
+# 限界框
 A BoundingBox defines a box shape in 3d space.
 
 ```json
