@@ -1,4 +1,4 @@
-The following materials can be used for the block property `material`:
+这些字段可用于创建方块时填写 `material` 属性:
 
 * air
 * cactus

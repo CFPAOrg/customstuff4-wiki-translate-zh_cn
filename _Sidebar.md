@@ -1,36 +1,36 @@
 __[[Home]]__
 
-__[[Getting Started]]__
+__[[起步]]__
 
-__[[Adding Content]]__
+__[[条目添加]]__
 
-__[[Json Formats]]__
+__[[JSON格式]]__
 
-__[[Crafting Recipes]]__
+__[[合成配方]]__
 
-__[[Smelting Recipes and Fuel]]__
+__[[冶炼配方和燃料]]__
 
-__[[Ore Dictionary]]__
+__[[矿物词典]]__
 
-__[[Tool Tips]]__
+__[[工具提示]]__
 
-__[[GUI Modifiers]]__
+__[[关于GUI的详细介绍]]__
 
-__[[Fluid Modifier]]__
+__[[关于流体的详细介绍]]__
 
-__[[Items]]__
+__[[物品]]__
 
-__[[Blocks]]__
+__[[方块]]__
 
-__[[Creative Tabs]]__
+__[[创造模式标签栏]]__
 
-__[[Tile Entities]]__
+__[[实体标签]]__
 
-__[[GUIs]]__
+__[[初步创建一个GUI]]__
 
-__[[World Generation]]__
+__[[世界生成]]__
 
-__[[Machine Recipes and Fuel]]__
+__[[机器合成和燃料使用]]__
 
 __[[IMC]]__
 

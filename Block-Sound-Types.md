@@ -1,4 +1,4 @@
-The following sound types can be used for the block property `soundType`.
+这些字段可用于创建方块时填写 `soundType` 属性:
 
 * anvil
 * cloth

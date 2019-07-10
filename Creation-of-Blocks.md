@@ -1,4 +1,4 @@
-In its most simple form, the definition of a block looks like this:
+最简单的方块定义如下所示:
 ```json
 {
   "type": "block:simple",
@@ -11,11 +11,10 @@ In its most simple form, the definition of a block looks like this:
 }
 ```
 
-The `id` property defines the internal name of the block. It has to be unique in your mod.
+该属性定义该方块的**唯一**ID. ID必须全部小写, 且不得包含空格. ID只需要在你的模组中的命名空间中保持唯一性.
 
-If you start the game now, you should see the block in the **Building Blocks** creative tab and can already place it.
-However it still uses the missing texture and model. To fix this, you need to create a **Block State** file. This file tells the game what model and thus texture to use
-for what state of the block. The file should be located in `assets/mymod/blockstates` and should have the exact same name as the `id` of the block, in our case this is `my_first_block.json`. The contents of the file might look like this:
+如果你现在启动游戏, 你会看见有一个方块在名为 **Building Blocks** 的创造模式标签页中.
+然而它还缺少材质和模型. 为了给它添加材质和模型, 你需要创建一个 **方块状态** 文件. 这个文件告诉游戏什么模型和材质用于方块的什么状态. 该文件应该位于路径 `assets/mymod/blockstates` 中, 并且应该与块的 `id` 完全相同, 在我们的例子中这是`my_first_block.json`. 该文件的内容如下所示:
 
 ```json
 {
@@ -26,7 +25,8 @@ for what state of the block. The file should be located in `assets/mymod/blockst
 }
 ```
 
-The `normal` variant tells the game what model is being for the block in the world. In this case the model file is `assets/mymod/models/block/my_first_block.json`. The contents of that file might look like this:
+我们将因具有不同方块状态的但具有相同ID的方块称为 **变种**.只有一种变种的方块, 变种名称为 `normal`.  
+方块变种 `normal` 告诉游戏世界上该方块的模型是什么. 在这种情况下, 模型文件的路径是 `assets/mymod/models/block/my_first_block.json`. 该文件的内容如下所示:
 ```json
 {
     "parent": "block/cube_all",
@@ -35,9 +35,9 @@ The `normal` variant tells the game what model is being for the block in the wor
     }
 }
 ```
-This will make the block look like a regular cube with the texture located at `assets/mymod/textures/blocks/my_first_block.png`.
+这将使块看起来像一个常规立方体, 材质位于 `assets/mymod/textures/blocks/my_first_block.png` .
 
-The `inventory` variant tells the game what model is being used if the block is an item in an inventory. Since this variant applies to the block's item, the file is `assets/mymod/models/item/my_first_block.json`. The contents of that file might look like this:
+`inventory` 变种告诉游戏当方块在玩家的背包或者物品容器内时所呈现的材质和模型. 由于这种用途相当于给一个物品添加材质, 所以这个变种的材质路径在 `assets/mymod/models/item/my_first_block.json`. 该文件的内容如下所示:
 ```json
 {
   "parent": "mymod:block/my_first_block",
@@ -50,14 +50,14 @@ The `inventory` variant tells the game what model is being used if the block is 
   }
 }
 ```
-This will make the block's item look like the block's model.
+这将使方块的物品形态看起来就像方块的模型.
 
-There's one last thing missing: if you hover of the block in the inventory, the displayed name is `tile.my_first_block.name`. This is the unlocalized name of the block. To add a localized name for it, add the following line to `assets/mymod/lang/en_US.lang` (create it if it doesn't exist):
+.还有一件事: 如果你就这样, 在方块的物品形态的信息界面中, 其显示的名称是 `tile.my_first_block.name`. 这是方块的未本地化名称. 要为其添加本地化名称, 请将以下内容添加到`assets/mymod/lang/en_US.lang`(如果文件不存在则创建文件)：
 
 ```
 tile.my_first_block.name=My First Block
 ```
 
-The block should now display its proper localized name in the game.
+该方块现在应该在游戏中显示其正确的本地化名称.
 ***
-More information about blocks can be found [here](Blocks).
+若你想了解更多关于方块的内容, 你可以使用[该链接](Blocks)跳转到响应页面.

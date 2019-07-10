@@ -1,16 +1,19 @@
-## Recipes for Vanilla Crafting Table
+## 原版工作台的合成配方
 
-In Minecraft 1.12 and up recipes for the vanilla crafting table are added with minecrafts own json files. Removal of recipes is currently disabled. To damage an item in a recipe you can use the __customstuff4:damageable_shaped__ and __customstuff4:damageable_shapeless__ recipe types like this: https://github.com/cubex2/customstuff4/tree/master/examplemod/assets/cs4examplemod/recipes
+在Minecraft 1.12及以上版本的原版合成中, 我们使用json文件来定义每一个合成配方. 目前禁用了合成配方的删除. 要在合成配方内使用一个带有耐久值的物品, 你可以使用 `customstuff4:damageable_shaped` 和 `customstuff4:damageable_shapeless` 类的合成, [这里](https://github.com/cubex2/customstuff4/tree/master/examplemod/assets/cs4examplemod/recipes)有一个示例.
 
-**Note**: This is for **crafting** recipes used by the vanilla crafting table only. Anything else, including smelting recipes, do not use this format. 
+**注意**: 这仅适用于为原版合成台使用的**合成**配方. 其他任何地方, 包括冶炼配方, 都不要使用这种格式.
 
-# Shaped Recipes
+# 有序合成
 
-Type name: __shapedRecipe__
+类名: __`shapedRecipe`__
 
 ```json
 {
-  "shape": ["SS", "D "],
+  "shape": [
+      "SS",
+      "D "
+    ],
   "items": {
     "S": "minecraft:sword_diamond@all",
     "D": "ore:blockDiamond"
@@ -28,19 +31,19 @@ Type name: __shapedRecipe__
 }
 ```
 	
-* __shape__: This is a list of strings. Each string is row in the recipe and each letter in the string one item. Every string has to have the same length and must be between 1 and 3 letters long. There must not be more than 3 strings.
+* __shape__: 这是一个由字符串组成的列表. 第一条字符串就相当于合成配方中的第一行, 第二条就是第二行, 以此类推; 字符串中的每个字母都是一个物品. 每个字符串互相之间必须是相同的长度, 并且长度必须在1到3个字母之间, 但相对的, 这个列表中不能有超过3条字符串.
 
-* __items__: Together with _shape_, this defines the input for the recipe. This maps the letters used in _shape_ to a RecipeInput. If you want to have empty spots in the recipe, just don't define an item for that letter. You may use "all" for metadata. Specifying _nbt_ here has no effect.
-* __damage__: Specifies for each item if it should be damaged instead of used up. Default is 0 which means item is used up.
-* __result__: This is an ItemStack defining the result of the recipe.
+* __items__: 与同级参数 `shape` 一起构成了合成配方的输入. 这会将 `shape` 中使用的字母映射到配方输入中. 如果你希望配方中有空白点, 则不要为该字母定义物品. 你可以使用 `all` 来匹配该物品的所有子类型(metadata). 在这里为物品指定NBT是无效的.
+* __damage__: 该参数为每个物品指定是否应该具有耐久值. 默认值为 `0`, 表示物品没有耐久值(满耐久).
+* __result__: 用于定义配方的输出, 输出的应该是一个ItemStack(物品)
 
-* __mirrored__: This is either _true_ or _false_ and specifies whether the accepts the mirrored version of the shape. This is optional and defaults to _true_.
-* __remove__: If true, the recipe will be removed instead of added. If true, either result or shape and items can be omitted which will remove all recipe that match the input or result. Default value is false.
-* __recipeList__: The list to add or remove the recipe from.
+* __mirrored__: 用于定义配方镜像翻转后是否仍生效. 接受布尔值. 默认值为 `true`.
+* __remove__: 如果该参数被设为 `true`, 则会删除与条目相同的合成, 且可以省略 `result` 或 `items` 和 `shape`. 这将删除与输入或结果匹配的所有配方. 默认值为 `false`.
+* __recipeList__: 要添加或删除配方的列表.
 
-# Shapeless Recipes
+# 无序合成
 
-Type name: __shapelessRecipe__
+类名: __`shapelessRecipe`__
 
 ```json
 {
@@ -58,8 +61,8 @@ Type name: __shapelessRecipe__
 }
 ```
 	
-* __items__: This is a list of RecipeInput and defines the items that are required for the recipe. You may use "all" for metadata. Specifying _nbt_ here has no effect.
-* __damage__: Specifies for each item if it should be damaged or used up where 0 means it will be used and everything greater will just damage the item. You can either not define this at all or for every input item.
-* __result__: This is an ItemStack defining the result of the recipe.
-* __remove__: If true, the recipe will be removed instead of added. If true, either result or items can be omitted which will remove all recipe that match the input or result. Default value is false.
-* __recipeList__: The list to add or remove the recipe from.
+* __items__: 这是配方输入的列表, 并定义了配方所需的物品. 你可以使用 `all` 来匹配该物品的所有子类型(metadata). 在这里为物品指定NBT是无效的.
+* __damage__: 该参数为每个物品指定是否应该具有耐久值. 默认值为 `0`, 表示物品没有耐久值(满耐久). 你可以根本不为每个输入项定义此项.
+* __result__: 用于定义配方的输出, 输出的应该是一个ItemStack(物品)
+* __remove__: 如果该参数被设为 `true`, 则会删除与条目相同的合成, 且可以省略 `result` 或 `items` 和 `shape`. 这将删除与输入或结果匹配的所有配方. 默认值为 `false`.
+* __recipeList__: 要添加或删除配方的列表.

@@ -1,6 +1,6 @@
-Armor materials are used by armor items to define certain properties for them.
+装甲使用装甲材料来定义装甲的某些属性.
 
-Type name: __armorMaterial__
+类型名称: __armorMaterial__
 
 ```json
 {
@@ -18,11 +18,11 @@ Type name: __armorMaterial__
 }
 ```
 
-* __id__: This is the unique id of the material. This is the id, you set the material property of armor items to.
-* __textureName__: The name of the armor texture. This defines two textures: one for helmet, chest and boots and one for legs. If this is set to `examplemod:myleather`, the paths of the two textures will be `assets/examplemod/textures/armor/myleather_layer_1.png` for helmet, chest and boots and `assets/examplemod/textures/armor/myleather_layer_2.png` for legs.
-* __durability__: How many uses the armor. This value is multiplied by another value depending on the type of armor, 13 for boots, 15 for legs, 16 for chest and 11 for helmet. The default value is 5.
-* __enchantability__: This defines how enchantable the armor is. Default value is 15.
-* __armorHelmet__, __armorChest__, __armorLegs__, __armorBoots__: These define the armor values for the different armor types. Default values are 1 (helmet), 3 (chest), 2 (legs) and 1 (boots).
-* __equipSound__: The sound that is played when the armor is being equipped. Default value is `item.armor.equip_leather`.
-* __toughness__: Defines the toughness for the armor. Default value is 0.0.
-* __repairItem__: This is an ItemStack that defines what can be used to repair the armor. Can be omitted to make the armor unrepairable.
+* __id__: 该属性定义该材料的唯一ID. 你可以使用ID设置装甲的材料.
+* __textureName__: 该属性定义装甲材质的名称. 其包含了两种材质: 一种用于头盔, 胸甲和靴子, 另外一种用于护膝. 如果该属性被设置为 `examplemod:myleather`, 用于头盔, 胸甲和靴子的材质的路径将为 `assets/examplemod/textures/armor/myleather_layer_1.png`, 用于护膝的材质路径将为 `assets/examplemod/textures/armor/myleather_layer_2.png`.
+* __durability__: 该属性定义用于该种装甲的耐久值. 该值将用于游戏计算装甲的实际耐久值, 计算方式如下: 如果一种装甲使用该材料, 那么该套装甲的头盔的最大耐久值为`11 * ${该属性}`, 以此类推, 胸甲为`16 * ${该属性}`, 护膝为`15 * ${该属性}`, 靴子则为`13 * ${该属性}`. 该属性的默认值为`5`.
+* __enchantability__: 该属性定义了材料所具有的可附魔性. 该属性的默认值为`15`.
+* __armorHelmet__, __armorChest__, __armorLegs__, __armorBoots__: 这些属性定义了不同装甲类型的装甲值. 默认值为 `1`(头盔[Helmet]) , `3`(胸甲[Chest]), `2`(护膝[Legs]), `1`(靴子[Boots]).
+* __equipSound__: 该属性定义装备装甲时游戏播放的声音. 默认值为 `item.armor.equip_leather`.
+* __toughness__: 该属性定义了装甲的韧性. 默认值为 `0.0`.
+* __repairItem__: 该种属性定义了可用于修复使用该装甲材料的装甲的物品. 若省略该属性则会使使用该装甲材料的装甲无法修复.
