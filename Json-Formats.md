@@ -241,7 +241,7 @@ BlockDrop几乎与ItemStack相同. 但有两处不同:
 这个物品过滤器不仅接受来自矿物词典 `stickWood` 的所有已注册的物品, 还接受物品 `minecraft:apple`.
 
 # 流体堆
-A FluidStack defines a fluid and an amount of that fluid. If no amount is specified 1000 is used.一个流体堆明确了流体类型和数量. 数量可以省略, 默认为 `1000` .
+一个流体堆明确了一种流体类型和数量. 数量可以省略, 默认为 `1000` .
 
 ```json
 "water"
@@ -268,7 +268,7 @@ A FluidStack defines a fluid and an amount of that fluid. If no amount is specif
 将数字 `200` 作为该流体堆的数量.
 
 # 限界框
-A BoundingBox defines a box shape in 3d space.
+限界框定义了在三维空间内的一个矩形盒状空间.
 
 ```json
 {
@@ -276,28 +276,41 @@ A BoundingBox defines a box shape in 3d space.
     "to": [1, 1, 1]
 }
 ```
-A bounding box for a full cube. The elements in the lists are in the order xyz.
+这是一个由完整立方体构成的限界框. 列表中的元素按 `x -> y -> z` 的顺序排列.
 
 ```json
+{
+    "from" : [0, 0, 0],
+    "to": [1, 1, 1]
+}
+
 {
     "cube": 1
 }
 ```
-Using cube will use `[0, 0, 0]` for the from part and the specified value for all elements of the to part. So this also defines a full cube.
+上面两种书写方式等效, 可选项 `cube` 用 `[0,0,0]` 作为 `from` 部分, 而指定值将作为 `to` 部分的所有元素. 这种方式也定义了一个完整的立方体.
 
 ```json
 {
+    "from": [0.1, 0.2, 0.3],
+    "to": [0.9, 1.0, 1.1]
+}
+
+{
     "from": [0, 0, 0],
     "to": [0.8, 0.8, 0.8],
-    "offset": [0.1, 0.1, 0.1]
+    "offset": [0.1, 0.2, 0.3]
 }
 ```
-The values defined in the offset part are being added to both from and to.
+
+上面两种的表达方式等效.
+`offset` 部分中定义的值将被添加到 `from` 和 `to` 所具有相对应的元素中.
 
 ```json
 {
     "cube": 0.8,
-    "offset": [0.1, 0.1, 0.1]
+    "offset": [0.1, 0.2, 0.3]
 }
 ```
-This defines the same bounding box as before but using cube instead.
+
+你也可以把 `cube` 和 `offset` 连用. 这种方式和上面那个也是等效的.

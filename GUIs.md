@@ -104,32 +104,32 @@ GUI可以使用物品槽, 并可以使用以下属性:
 * __bg__: 该属性定义了一个本地资源导引, 用于GUI的背景纹理.
 * __bgTexX__, __bgTexY__: 这些属性定义了背景材质中的实际背景的位置. 原点为背景材质左上方, 从(`bgTexX`, `bgTexY`)开始, 其大小为 `width * height` . 默认值都为 `0`.
 * __slots__: 该属性定义了GUI的物品槽列表. 列表的顺序取决于Shift-Click(快速分发)策略.
-	* __name__: This is the name of the inventory. For inventories in tile enties, this is the value used for the name attribute of the inventory module.
-	* __firstSlot__: This is the index of the first slot from the inventory that is being used. This is usefull if you want one inventory to split into multiple areas. The player inventory, for example, is split into the hotbar and the non-hotbar areas. The default value is 0.
-	* __rows__, __columns__: These define in how many rows and columns is separated in. They also define how many slots are added (rows * columns = totalSlots). Default values are 1.
-	* __x__, __y__: These define where the top-left slot is positioned in the GUI, relative to the background.
-	* __dropOnClose__: This defines whether the items in the slots should be dropped when closing the GUI. Default value is false.
-	* __spacingX__, __spacingY__: The defines the spacing between the individual slots. Default value is 18.
-* __shiftClickRules__: This a list of rules that define what happens when you shift-click a slot. In the example above, the first slots have indices 0 to 26, the second 27 to 53 and the last 54 to 62.
-	* __from__: This defines the index of the first and last slot that the rule applies to.
-	* __to__: This defines the index of the first and last slot that a itemstack is transferred to. If the first index is greater than the second index, it'll search in reverse order for a valid slot to put the stack to.
-	* __filter__: This is a ItemFilter that defines what items this rule applies to. Default value allows all items.
-* __labels__: This is a list of labels that are drawn onto the GUI.
-	* __text__: The text that is being drawn.
-	* __x__, __y__: The position of the text relative to the background.
-	* __color__: This is a Color defining the color of the text. Default value is "404040".
-	* __dropShadow__: Whether to draw the drop shadow. Default value is false.
-* __progressBars__: This is a list of progress bars that are drawn onto the GUI.
-	* __x__, __y__: The position of the bar relative to the background.
-	* __texX__, __texY__: These define where in the background texture the progress bar is located.
-	* __width__, __height__: The width and height of the bar when completely filled.
-	* __direction__: The direction in which the bar fills. One of: up, down, left, right.
-	* __source__: This defines where the progress for the bar comes from. For example, machine:burnTime, uses the burnTime from the tile entity module with the name machine.
-* __fluidDisplays__: This is a list of fluid displays that are drawn onto the GUI.
-	* __x__, __y__: The position of the display relative to the background.
-	* __width__, __height__: The size of display.
-	* __overlayTexX__, __overlayTexY__: If the tank has a overlay that is drawn onto the fluid, these define where in the background texture that overlay is located. The overlay has the same size as the display itself.
-	* __source__: This defines where the data for the display is from. This can, for example, be the id of a tank module.
+	* __name__: 物品槽在GUI中的名称. 对于Tile Entities中所具有的物品槽模块, 这是用于填入物品槽模块的属性 `name` 的值以与其进行数据绑定.
+	* __firstSlot__: 这是正在使用的物品槽的首槽的索引. 如果您希望将一个物品槽分成多个部分, 这将非常有用. 举个例子吧, 玩家的背包就使用这个特性将36个槽划分为快捷栏和背包两个部分. 默认值为 `0`.
+	* __rows__, __columns__: 定义了物品槽的行数和列数. 这将会添加 `rows * columns` 个物品槽到GUI中. 默认值则都为 `1`.
+	* __x__, __y__: 定义了物品槽的居于最左上角的槽在GUI中相对于背景的位置.
+	* __dropOnClose__: 这定义了当关闭GUI时已在GUI内存放的物品是否会掉落到地面上. 默认值为 `false`.
+	* __spacingX__, __spacingY__: 定义各个物品槽之间的间距. 默认值皆为 `18`.
+* __shiftClickRules__: 这是一个规则列表, 用于定义当你按住Shift键单击物品槽时触发的事件. 在上面的示例中, 第一个物品槽堆的索引为 `0` 到 `26`, 第二个则为 `27` 到 `53`, 最后一个为 `54` 到 `62` .
+	* __from__: 定义了规则适用的第一个和最后一个插槽的索引.
+	* __to__: 定义了物品堆可移动到的第一个和最后一个物品槽的索引. 如果第一个索引大于第二个索引, 它将以相反的顺序搜索有效的插槽以将物品放入.
+	* __filter__: 这是一个物品过滤器, 用于定义此规则所适用的物品. 默认可以接受任意物品.
+* __labels__: 包含了将被绘制到GUI上的所有标签的列表.
+	* __text__: 将被渲染的标签的内容
+	* __x__, __y__: 标签相对于背景的位置.
+	* __color__: 标签文字的颜色. 默认值为 `404040`.
+	* __dropShadow__: 是否绘制投影(Drop Shadow). 默认值为 `false`.
+* __progressBars__: 包含了绘制到GUI上的所有进度条的列表.
+	* __x__, __y__: 进度条相对于背景的位置.
+	* __texX__, __texY__: 定义了进度条所在的背景材质中的位置.
+	* __width__, __height__: 进度条的宽度和高度(当进度为100%时).
+	* __direction__: 从进度条起始位置向满进度进发的方向. 可以是 `up`(向上), `down`(向下), `left`(向左), `right`(向右) 中的任意一个.
+	* __source__: 这定义了进度条的进度表示了什么. 举个例子, 像机器所具有的燃料值(`machine:burnTime`), 这将使用机器的Tile Entities中的 `machine` 模块的参数值 `burnTime`
+* __fluidDisplays__: 包含了将被绘制到GUI上的所有流体槽的列表.
+	* __x__, __y__: 流体槽相对于背景的位置.
+	* __width__, __height__: 流体槽的尺寸(宽和高)
+	* __overlayTexX__, __overlayTexY__: 如果流体槽具有绘制在流体上的覆盖层, 则这些覆盖层定义了覆盖层所在的背景材质中的位置. 覆加层的大小与流体槽本身的大小相同.
+	* __source__: 定义数据源自何处. 举个例子, 你可以填入Tile Entities中的模块 `tank` 的id.
 	
 
 
